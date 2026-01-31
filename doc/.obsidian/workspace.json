@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2-C-spot lumineux sur le public.md",
+                "file": "0-intro.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2-C-spot lumineux sur le public"
+              "title": "0-intro"
             }
           },
           {
@@ -119,7 +119,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2-C-spot lumineux sur le public.md",
+                "file": "0-intro.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +129,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 2-C-spot lumineux sur le public"
+              "title": "Backlinks for 0-intro"
             }
           },
           {
@@ -138,12 +138,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "2-C-spot lumineux sur le public.md",
+                "file": "0-intro.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 2-C-spot lumineux sur le public"
+              "title": "Outgoing links from 0-intro"
             }
           },
           {
@@ -181,13 +181,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2-C-spot lumineux sur le public.md",
+                "file": "0-intro.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 2-C-spot lumineux sur le public"
+              "title": "Outline of 0-intro"
             }
           }
         ]
@@ -210,12 +210,12 @@
   },
   "active": "cd970fb06a0bd749",
   "lastOpenFiles": [
-    "2-B-jorge ne peut pas être joué par manque de budget.md",
-    "2-C-spot lumineux sur le public.md",
+    "1-arrivée devans l'écurie - armurerie.md",
     "4-A-la fin.md",
     "3-A-affrontement.md",
+    "2-C-spot lumineux sur le public.md",
+    "2-B-jorge ne peut pas être joué par manque de budget.md",
     "2-A-jorge est un cheval.md",
-    "1-arrivée devans l'écurie - armurerie.md",
     "0-intro.md",
     "global-game-jam-2026/Untitled.md"
   ]

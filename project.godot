@@ -11,5 +11,6 @@ config_version=5
 [application]
 
 config/name="heroic"
+run/main_scene="uid://bp5qd845jk0t4"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
