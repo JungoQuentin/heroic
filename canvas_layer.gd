@@ -16,8 +16,7 @@ func start_story(current_story: StoryNode) -> void:
 	$ChoicesContainer.hide()
 	
 	if current_story is StoryNodeAction:
-		$Label.text = current_story.text
-		await get_tree().create_timer(2.).timeout
+		await execute_action(current_story.action)
 		start_story(current_story.next)
 	elif current_story is StoryNodeChoice:
 		var i = 0
@@ -30,3 +29,28 @@ func start_story(current_story: StoryNode) -> void:
 	else: # is null
 		$Label.text = '<the end>'
 		return
+
+
+func execute_action(action: Action) -> void:
+	if action is Line:
+		$"../AudioStreamPlayer".stream = action.audio
+		$"../AudioStreamPlayer".play()
+		poses_loop(action.poses_times, Time.get_ticks_msec())
+		await $"../AudioStreamPlayer".finished
+	else:
+		assert(false, "it should be an Action type !")
+
+
+func poses_loop(
+	poses_times: Dictionary[float, CompressedTexture2D], 
+	started_since: int
+) -> void:
+	if poses_times.is_empty():
+		return
+	var elapsed = Time.get_ticks_msec() - started_since
+	var first = poses_times.keys().min()
+	if first * 1000 < elapsed:
+		$"../Sprite3D".texture = poses_times[first]
+		poses_times.erase(first)
+	await get_tree().create_timer(0.1).timeout
+	poses_loop(poses_times, started_since)

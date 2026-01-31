@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "0-intro.md",
+                "file": "1-arrivée devans l'écurie - armurerie.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "0-intro"
+              "title": "1-arrivée devans l'écurie - armurerie"
             }
           },
           {
@@ -119,7 +119,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "0-intro.md",
+                "file": "1-arrivée devans l'écurie - armurerie.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +129,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 0-intro"
+              "title": "Backlinks for 1-arrivée devans l'écurie - armurerie"
             }
           },
           {
@@ -138,12 +138,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "0-intro.md",
+                "file": "1-arrivée devans l'écurie - armurerie.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 0-intro"
+              "title": "Outgoing links from 1-arrivée devans l'écurie - armurerie"
             }
           },
           {
@@ -181,13 +181,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "0-intro.md",
+                "file": "1-arrivée devans l'écurie - armurerie.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 0-intro"
+              "title": "Outline of 1-arrivée devans l'écurie - armurerie"
             }
           }
         ]
@@ -210,13 +210,13 @@
   },
   "active": "cd970fb06a0bd749",
   "lastOpenFiles": [
+    "2-A-jorge est un cheval.md",
     "1-arrivée devans l'écurie - armurerie.md",
+    "0-intro.md",
     "4-A-la fin.md",
     "3-A-affrontement.md",
     "2-C-spot lumineux sur le public.md",
     "2-B-jorge ne peut pas être joué par manque de budget.md",
-    "2-A-jorge est un cheval.md",
-    "0-intro.md",
     "global-game-jam-2026/Untitled.md"
   ]
 }
