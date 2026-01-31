@@ -13,9 +13,27 @@ func line(_audio: Resource) -> Line:
 var story = StoryNodeList.new([
 	# INTRODUCTION
 	# Les rideaux sont fermés
+	# 0-01
 	action(line(preload("res://audio/voices/0-01-ofatalite.wav"))),
+	# 0-02
 	choice({
-		"Unique": action(line(preload("res://audio/voices/0-06-allonsy.wav"))),
-		"Coucou": action(Action.CurtainsOpening.new())
+		"Ouvrir les rideaux": action(Action.CurtainsOpening.new())
 	}),
+	# 0-03
+	# 0-04
+	action(line(preload("res://audio/voices/0-02-levillabominable.wav"))),
+	# 0-05
+	action(line(preload("res://audio/voices/0-03-adresseparole.wav"))),
+	# 0-06
+	action(line(preload("res://audio/voices/public-03-oh.wav"))),
+	# 0-07
+	action(line(preload("res://audio/voices/0-04-monroleproteger.wav"))),
+	# 0-08
+	action(line(preload("res://audio/voices/0-05-odieuxdonnezmoirage.wav"))),
+	# 0-09
+	action(line(preload("res://audio/voices/0-06-allonsy.wav"))),
+	# 0-10
+	action(Action.CurtainsClosing.new()),
+	# 0-11
+	action(line(preload("res://audio/voices/public-03-oh.wav"))),
 ])
