@@ -13,9 +13,7 @@
 		- Il rate les premieres repliques...
 	- sinon, Jorge vient le dégager et prendre sa place
 - Pétage de plomb de Jorge
-- "J'en ai marre ! Ras-Le-C\*\*\*L, Je suis ton écuyer dans la piece dans la vraie vie !"
-- "Et ma femme ! T'approche pas de ma femme !"
-- ...
+- "Ton dos Jorge, Ton dos Jorge, je vais t'en donner du dos! J'en ai marre ! Je suis ton écuyer dans le théatre dans la vraie vie !"
 - moment de noir -> appuyer plein de fois sur espace, devient intense, juste 2 epees qui se rapproche, jusqu'au "chling" de fin (coup d'epee)
 - Fondu au blanc - heroic/epic
 - Suite : [[4-A-la fin]]

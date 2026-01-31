@@ -1,0 +1,6 @@
+- joie
+- surprise
+- relief
+- colère
+- tousse
+- 
