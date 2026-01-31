@@ -1,5 +1,6 @@
 class_name StoryNodeAction extends StoryNode
 
+@export var actionTitle: String
 @export var action: Action
 @export var next: StoryNode
 

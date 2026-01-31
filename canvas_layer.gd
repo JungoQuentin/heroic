@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-var story: Story = preload("res://story_a.tres")
+var story: Story = preload("res://intro-0.tres")
 
 func _ready() -> void:
 	print(story.story_node)
@@ -25,6 +25,9 @@ func start_story(current_story: StoryNode) -> void:
 			$ChoicesContainer.get_child(i).text = choice
 			$ChoicesContainer.get_child(i).pressed.connect(func(): start_story(current_story.choices[choice])) 
 			i += 1
+		if i == 1: # sorry for the spaghetti
+			$ChoicesContainer.get_child(1).hide()
+			$ChoicesContainer.get_child(2).hide()
 		return
 	else: # is null
 		$Label.text = '<the end>'
