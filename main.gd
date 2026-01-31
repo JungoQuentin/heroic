@@ -17,7 +17,8 @@ func start_story(current_story: StoryNode) -> void:
 	elif current_story is StoryNodeAction:
 		await execute_action(current_story.action)
 	elif current_story is StoryNodeChoice:
-		ui.display_choices(current_story.choices, start_story)
+		var choice = await ui.display_choices(current_story.choices)
+		await start_story(choice)
 	else: # is null
 		pass # THE END
 
