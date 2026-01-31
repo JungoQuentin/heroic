@@ -1,6 +1,7 @@
 class_name Main extends Node3D
 
 @onready var ui: Ui = $Ui
+@onready var world: BWorld = $World
 @onready var dialog_stream_player: AudioStreamPlayer = $DialogAudioStreamPlayer
 
 
@@ -28,9 +29,9 @@ func execute_action(action: Action) -> void:
 		poses_loop(action.poses_times, Time.get_ticks_msec())
 		await dialog_stream_player.finished
 	elif action is Action.CurtainsClosing:
-		pass
+		await world.close_curtains()
 	elif action is Action.CurtainsOpening:
-		pass
+		await world.open_curtains()
 	else:
 		assert(false, "it should be an Action type !")
 
