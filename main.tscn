@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dl42sr527mgru" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://cmysn2udtxgr7" path="res://canvas_layer.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://r7oqvcqkwqu6" path="res://scenes/world.tscn" id="3_h2yge"]
 
 [node name="Main" type="Node3D" unique_id=685122384]
 script = ExtResource("1_0xm2m")
@@ -33,3 +34,5 @@ text = "Choix C
 "
 
 [node name="DialogAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=557127955]
+
+[node name="World" parent="." unique_id=1283472454 instance=ExtResource("3_h2yge")]

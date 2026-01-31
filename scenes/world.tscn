@@ -1,0 +1,186 @@
+[gd_scene format=3 uid="uid://r7oqvcqkwqu6"]
+
+[ext_resource type="Script" uid="uid://b20tcrj5ipqcu" path="res://scenes/world.gd" id="1_jhx03"]
+[ext_resource type="PackedScene" uid="uid://wyhl2g8o05no" path="res://scenes/rideau_droite.tscn" id="2_o8fc1"]
+[ext_resource type="PackedScene" uid="uid://dqx13uot8s4cv" path="res://scenes/rideau_gauche.tscn" id="3_xo05s"]
+[ext_resource type="Texture2D" uid="uid://hkwqnoxkdvn5" path="res://textures/wood/6453600.jpg" id="4_dss4m"]
+[ext_resource type="Texture2D" uid="uid://d11blrq7gp262" path="res://textures/cardboard/Cardboard002_1K-JPG_Color.jpg" id="5_7t5mc"]
+[ext_resource type="Texture2D" uid="uid://ba1nw4insj3ab" path="res://assets/2D/Publique/theatre_public_blocking.png" id="6_lakw3"]
+[ext_resource type="ArrayMesh" uid="uid://ce84gkttuyk7k" path="res://assets/3D/front_panel/front_plane_face.obj" id="7_pm21f"]
+[ext_resource type="Shader" uid="uid://dme2bhejt8uhu" path="res://shaders/cardboard_face.gdshader" id="8_2lf6f"]
+[ext_resource type="ArrayMesh" uid="uid://btrf748mva3fd" path="res://assets/3D/front_panel/front_plane_side.obj" id="9_7iits"]
+[ext_resource type="Shader" uid="uid://38qgcitxmrt3" path="res://shaders/cardboard_side.gdshader" id="10_oo54l"]
+[ext_resource type="Texture2D" uid="uid://cc12ix4hvhx88" path="res://textures/cardboard/cardboard.webp" id="11_kpybi"]
+[ext_resource type="ArrayMesh" uid="uid://b2apr35w2h7d8" path="res://assets/3D/middle_panel/middle_panel_face.obj" id="12_ctatt"]
+[ext_resource type="ArrayMesh" uid="uid://bn5lls1efuvah" path="res://assets/3D/middle_panel/middle_panel_side.obj" id="13_xgqkh"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gthg3"]
+sky_top_color = Color(0.40349752, 0.23201117, 0.09611865, 1)
+sky_horizon_color = Color(0.31640095, 0.27352935, 0.23955622, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0.31640095, 0.27352935, 0.23955622, 1)
+energy_multiplier = 0.2
+
+[sub_resource type="Sky" id="Sky_ntc4i"]
+sky_material = SubResource("ProceduralSkyMaterial_gthg3")
+
+[sub_resource type="Environment" id="Environment_u0xbq"]
+background_mode = 2
+sky = SubResource("Sky_ntc4i")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_gthg3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ntc4i"]
+albedo_texture = ExtResource("4_dss4m")
+uv1_scale = Vector3(4, 4, 4)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ntc4i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u0xbq"]
+albedo_texture = ExtResource("5_7t5mc")
+
+[sub_resource type="QuadMesh" id="QuadMesh_u0xbq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pln1h"]
+transparency = 1
+albedo_texture = ExtResource("6_lakw3")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s36qc"]
+render_priority = 0
+shader = ExtResource("8_2lf6f")
+shader_parameter/albedo_tex = ExtResource("5_7t5mc")
+shader_parameter/world_scale = 0.07
+shader_parameter/rotation_deg = 90.000004275
+shader_parameter/projection_plane = 2
+shader_parameter/rotation_pivot = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6qxox"]
+render_priority = 0
+shader = ExtResource("10_oo54l")
+shader_parameter/albedo_tex = ExtResource("11_kpybi")
+shader_parameter/world_scale = 3.0
+shader_parameter/rotation_deg = 0.0
+shader_parameter/rotation_pivot = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u0xbq"]
+render_priority = 0
+shader = ExtResource("8_2lf6f")
+shader_parameter/albedo_tex = ExtResource("5_7t5mc")
+shader_parameter/world_scale = 0.05
+shader_parameter/rotation_deg = 0.0
+shader_parameter/projection_plane = 2
+shader_parameter/rotation_pivot = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gthg3"]
+render_priority = 0
+shader = ExtResource("10_oo54l")
+shader_parameter/albedo_tex = ExtResource("11_kpybi")
+shader_parameter/world_scale = 2.0
+shader_parameter/rotation_deg = 90.0
+shader_parameter/rotation_pivot = Vector2(0, 0)
+
+[node name="World" type="Node3D" unique_id=1283472454]
+script = ExtResource("1_jhx03")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1810001575]
+environment = SubResource("Environment_u0xbq")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1578331249]
+transform = Transform3D(-4.371139e-08, 0.017452406, -0.9998477, 0, 0.9998477, 0.017452406, 1, 7.628689e-10, -4.370473e-08, -11.560702, 4.562749, 0)
+fov = 46.7
+
+[node name="Theater" type="Node3D" parent="." unique_id=145647438]
+
+[node name="rideau_droite" parent="Theater" unique_id=1497206293 instance=ExtResource("2_o8fc1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8008442, 0, 0)
+
+[node name="rideau_gauche" parent="Theater" unique_id=1475470428 instance=ExtResource("3_xo05s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8008442, 0, 0)
+
+[node name="ground" type="MeshInstance3D" parent="Theater" unique_id=569869560]
+transform = Transform3D(25.321627, 0, 0, 0, 1, 0, 0, 0, 45.658157, 12.351536, -0.93094206, -0.0598588)
+mesh = SubResource("CylinderMesh_gthg3")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ntc4i")
+
+[node name="backboard" type="MeshInstance3D" parent="Theater" unique_id=421576354]
+transform = Transform3D(-6.2994553e-07, -14.411474, 0, 14.411474, -6.2994553e-07, 0, 0, 0, 14.411474, 11.706662, 0, 0)
+mesh = SubResource("PlaneMesh_ntc4i")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_u0xbq")
+
+[node name="wall_right" type="MeshInstance3D" parent="Theater" unique_id=183990941]
+transform = Transform3D(-1.630419e-07, -3.7299645, -13.920415, 14.411474, -6.299455e-07, 0, -6.084806e-07, -13.920415, 3.7299645, -11, 0, 13)
+mesh = SubResource("PlaneMesh_ntc4i")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_u0xbq")
+
+[node name="wall_left" type="MeshInstance3D" parent="Theater" unique_id=1410567457]
+transform = Transform3D(-1.6304193e-07, -3.7299645, 13.920415, 14.411474, -6.2994553e-07, 0, 6.0848066e-07, 13.920415, 3.7299645, -11, 0, -13)
+mesh = SubResource("PlaneMesh_ntc4i")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_u0xbq")
+
+[node name="public" type="Node3D" parent="Theater" unique_id=902003679]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Theater/public" unique_id=507124194]
+transform = Transform3D(-2.2423943e-07, 0, -2.565, 0, 2.565, 0, 5.13, 0, -1.12119714e-07, -7.4290113, 3.9029312, -1.249712)
+mesh = SubResource("QuadMesh_u0xbq")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_pln1h")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Theater/public" unique_id=1239447769]
+transform = Transform3D(2.2423943e-07, 9.801817e-15, -2.565, -4.4847886e-07, 2.565, 0, -5.13, -2.2423943e-07, -1.12119714e-07, -7.4290123, 3.9136057, 1.3578377)
+mesh = SubResource("QuadMesh_u0xbq")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_pln1h")
+
+[node name="FrontPanel_01" type="Node3D" parent="Theater" unique_id=1677749447]
+
+[node name="FrontPlaneFace" type="MeshInstance3D" parent="Theater/FrontPanel_01" unique_id=1745304780]
+transform = Transform3D(1.12, 0, 0, 0, 1.12, 0, 0, 0, 1.12, 0, 0, 0)
+mesh = ExtResource("7_pm21f")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("ShaderMaterial_s36qc")
+
+[node name="FrontPlaneSide" type="MeshInstance3D" parent="Theater/FrontPanel_01" unique_id=1083551929]
+transform = Transform3D(1.12, 0, 0, 0, 1.12, 0, 0, 0, 1.12, 0, 0, 0)
+mesh = ExtResource("9_7iits")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("ShaderMaterial_6qxox")
+
+[node name="middlePanel_01" type="Node3D" parent="Theater" unique_id=1564076154]
+
+[node name="MiddlePanelFace" type="MeshInstance3D" parent="Theater/middlePanel_01" unique_id=1676576379]
+mesh = ExtResource("12_ctatt")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("ShaderMaterial_u0xbq")
+
+[node name="MiddlePanelSide" type="MeshInstance3D" parent="Theater/middlePanel_01" unique_id=384530234]
+mesh = ExtResource("13_xgqkh")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("ShaderMaterial_gthg3")
+
+[node name="middlePanel_02" type="Node3D" parent="Theater" unique_id=1593766888]
+transform = Transform3D(0.9477041, 0, 0, 0, 1.12, 0, 0, 0, 1.0854278, -0.78347206, 0, 0)
+
+[node name="MiddlePanelFace2" type="MeshInstance3D" parent="Theater/middlePanel_02" unique_id=1714725109]
+mesh = ExtResource("12_ctatt")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("ShaderMaterial_u0xbq")
+
+[node name="MiddlePanelSide2" type="MeshInstance3D" parent="Theater/middlePanel_02" unique_id=1288446502]
+mesh = ExtResource("13_xgqkh")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("ShaderMaterial_gthg3")
+
+[node name="Lights" type="Node3D" parent="." unique_id=1130469808]
+
+[node name="mainSpot" type="SpotLight3D" parent="Lights" unique_id=123069841]
+transform = Transform3D(0.49999997, 3.7855173e-08, -0.86602545, 0.86602545, -2.185569e-08, 0.49999997, 0, -1, -4.371139e-08, -15.728101, 12.38589, 0)
+light_energy = 32.0
+shadow_enabled = true
+spot_range = 33.818066
+spot_angle = 20.503931
