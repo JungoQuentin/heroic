@@ -1,0 +1,3 @@
+- Jorge joue le méchant 
+	- il ne veut pas mourir
+	- au debut il essaye, il se rate, et apres il pete un cable -> ca devient le moment ou il se rebel contre son chef le tirant
