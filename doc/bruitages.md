@@ -1,0 +1,5 @@
+- joie
+- surprise
+- relief
+- colère
+- 
