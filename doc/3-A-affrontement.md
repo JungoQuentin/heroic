@@ -1,6 +1,4 @@
 #ggj
-
-
 - Un mec arrive en courant pour apporter une missive, contenant le lieu de l'affrontement
 - **CHOIX 1** :
 	- Le haut de la falaise stylé
@@ -9,5 +7,15 @@
 		- si on a le temps de faire en mode silencieux
 - Rideaux se ferment
 - Rideaux s'ouvrent (dans le lieu choisis)
-
-[[4-A-]]
+- Le chevalier noir apparait
+	- si on avait choisi "manque de budget"
+		- Jorge est le chevalier noir
+		- Il rate les premieres repliques...
+	- sinon, Jorge vient le dégager et prendre sa place
+- Pétage de plomb de Jorge
+- "J'en ai marre ! Ras-Le-C\*\*\*L, Je suis ton écuyer dans la piece dans la vraie vie !"
+- "Et ma femme ! T'approche pas de ma femme !"
+- ...
+- moment de noir -> appuyer plein de fois sur espace, devient intense, juste 2 epees qui se rapproche, jusqu'au "chling" de fin (coup d'epee)
+- Fondu au blanc - heroic/epic
+- Suite : [[4-A-la fin]]
