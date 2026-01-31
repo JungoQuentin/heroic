@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1-arrivée devans l'écurie - armurerie.md",
+                "file": "2-A-jorge est un cheval.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1-arrivée devans l'écurie - armurerie"
+              "title": "2-A-jorge est un cheval"
             }
           },
           {
@@ -210,13 +210,13 @@
   },
   "active": "cd970fb06a0bd749",
   "lastOpenFiles": [
-    "2-A-jorge est un cheval.md",
     "1-arrivée devans l'écurie - armurerie.md",
+    "2-A-jorge est un cheval.md",
+    "2-C-spot lumineux sur le public.md",
+    "2-B-jorge ne peut pas être joué par manque de budget.md",
     "0-intro.md",
     "4-A-la fin.md",
     "3-A-affrontement.md",
-    "2-C-spot lumineux sur le public.md",
-    "2-B-jorge ne peut pas être joué par manque de budget.md",
     "global-game-jam-2026/Untitled.md"
   ]
 }
