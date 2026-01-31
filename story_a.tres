@@ -1,12 +1,26 @@
-[gd_resource type="Resource" script_class="Story" load_steps=3 format=3 uid="uid://dkqgwe37nec8e"]
+[gd_resource type="Resource" script_class="Story" format=3 uid="uid://dkqgwe37nec8e"]
 
 [ext_resource type="Script" uid="uid://c1ru4mssvfreo" path="res://story/story.gd" id="1_e0grw"]
+[ext_resource type="Script" uid="uid://bc7iicnwk64ct" path="res://story/story_node_action.gd" id="2_agbdg"]
 
-[sub_resource type="Resource" id="Resource_e0grw"]
-script = ExtResource("1_e0grw")
-metadata/_custom_type_script = "uid://c1ru4mssvfreo"
+[sub_resource type="Resource" id="Resource_agbdg"]
+script = ExtResource("2_agbdg")
+text = "---yyy---"
+metadata/_custom_type_script = "uid://bc7iicnwk64ct"
+
+[sub_resource type="Resource" id="Resource_cumef"]
+script = ExtResource("2_agbdg")
+text = "Coucou yes !"
+next = SubResource("Resource_agbdg")
+metadata/_custom_type_script = "uid://bc7iicnwk64ct"
+
+[sub_resource type="Resource" id="Resource_r2duy"]
+script = ExtResource("2_agbdg")
+text = "Premier text !"
+next = SubResource("Resource_cumef")
+metadata/_custom_type_script = "uid://bc7iicnwk64ct"
 
 [resource]
 script = ExtResource("1_e0grw")
-story = SubResource("Resource_e0grw")
+story_node = SubResource("Resource_r2duy")
 metadata/_custom_type_script = "uid://c1ru4mssvfreo"
