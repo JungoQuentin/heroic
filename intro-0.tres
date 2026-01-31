@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Story" format=3 uid="uid://dkqgwe37nec8e"]
 
 [ext_resource type="Script" uid="uid://c1ru4mssvfreo" path="res://story/story.gd" id="1_gqd7n"]
-[ext_resource type="AudioStream" uid="uid://bqr66q7bgh630" path="res://audio/a.mp3" id="2_ev2xm"]
+[ext_resource type="AudioStream" uid="uid://bqr66q7bgh630" path="res://audio/voices/a.mp3" id="2_ev2xm"]
 [ext_resource type="Script" uid="uid://jdmgxauo13rp" path="res://story/actions/line.gd" id="5_om4gf"]
 [ext_resource type="Script" uid="uid://cg81njvoyicke" path="res://story/story_node.gd" id="6_uvnlm"]
 [ext_resource type="Script" uid="uid://c1tkgeviec5f2" path="res://story/story_node_choice.gd" id="7_thamu"]
