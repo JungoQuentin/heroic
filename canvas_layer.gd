@@ -1,23 +1,23 @@
 extends CanvasLayer
 
-var story: Story = preload("res://intro-0.tres")
 
 func _ready() -> void:
-	print(story.story_node)
 	$Label.text = '<the start>'
 	$ChoicesContainer.hide()
 	await get_tree().create_timer(1.).timeout
-	print(story.story_node)
-	start_story(story.story_node)
+	start_story(Timeline.new().story)
 
 
 func start_story(current_story: StoryNode) -> void:
 	print('enter with, ', current_story)
 	$ChoicesContainer.hide()
 	
-	if current_story is StoryNodeAction:
+	if current_story is StoryNodeList:
+		for action in current_story.list:
+			await start_story(action)
+	elif current_story is StoryNodeAction:
 		await execute_action(current_story.action)
-		start_story(current_story.next)
+		#start_story(current_story.next)
 	elif current_story is StoryNodeChoice:
 		var i = 0
 		for choice in current_story.choices:
@@ -40,6 +40,10 @@ func execute_action(action: Action) -> void:
 		$"../AudioStreamPlayer".play()
 		poses_loop(action.poses_times, Time.get_ticks_msec())
 		await $"../AudioStreamPlayer".finished
+	elif action is Action.CurtainsClosing:
+		pass
+	elif action is Action.CurtainsOpening:
+		pass
 	else:
 		assert(false, "it should be an Action type !")
 
