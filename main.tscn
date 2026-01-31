@@ -1,32 +1,15 @@
 [gd_scene format=3 uid="uid://bp5qd845jk0t4"]
 
+[ext_resource type="Script" uid="uid://dl42sr527mgru" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://cmysn2udtxgr7" path="res://canvas_layer.gd" id="1_ig7tw"]
 
 [node name="Main" type="Node3D" unique_id=685122384]
+script = ExtResource("1_0xm2m")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=188922279]
-transform = Transform3D(1, 0, 0, 0, 0.95013005, 0.31185406, 0, -0.31185406, 0.95013005, 0, 3.2717285, 5)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=96536767]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.05, 2.19, -1.56)
-size = Vector3(2, 5, 9)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1672041577]
-transform = Transform3D(-4.371139e-08, 0, 1, 1, -4.371139e-08, 4.371139e-08, 4.371139e-08, 1, 1.9106855e-15, 0.05, -0.8818841, 0.8206856)
-size = Vector3(2, 5, 9)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=295312155]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 2)
-omni_range = 7.796
-omni_attenuation = -0.59
-
-[node name="Sprite3D" type="Sprite3D" parent="." unique_id=489215668]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6213899, 1.4410143)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1047050145]
+[node name="Ui" type="CanvasLayer" parent="." unique_id=1047050145]
 script = ExtResource("1_ig7tw")
 
-[node name="ChoicesContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=1901963403]
+[node name="ChoicesContainer" type="HBoxContainer" parent="Ui" unique_id=1901963403]
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -36,32 +19,17 @@ grow_horizontal = 2
 grow_vertical = 0
 alignment = 1
 
-[node name="Button" type="Button" parent="CanvasLayer/ChoicesContainer" unique_id=1924117247]
+[node name="Button" type="Button" parent="Ui/ChoicesContainer" unique_id=1924117247]
 layout_mode = 2
 text = "Choix A"
 
-[node name="Button2" type="Button" parent="CanvasLayer/ChoicesContainer" unique_id=711560342]
+[node name="Button2" type="Button" parent="Ui/ChoicesContainer" unique_id=711560342]
 layout_mode = 2
 text = "Choix B"
 
-[node name="Button3" type="Button" parent="CanvasLayer/ChoicesContainer" unique_id=1554165484]
+[node name="Button3" type="Button" parent="Ui/ChoicesContainer" unique_id=1554165484]
 layout_mode = 2
 text = "Choix C
 "
 
-[node name="Label" type="Label" parent="CanvasLayer" unique_id=83706972]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 50
-text = "TEXT"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=557127955]
+[node name="DialogAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=557127955]
