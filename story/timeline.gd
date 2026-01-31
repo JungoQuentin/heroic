@@ -7,17 +7,15 @@ func choice(_choices: Dictionary[String, StoryNode]) -> StoryNodeChoice:
 func action(_action: Action) -> StoryNodeAction:
 	return StoryNodeAction.new(_action)
 
+func line(_audio: Resource) -> Line:
+	return Line.new(_audio, {})
 
 var story = StoryNodeList.new([
-	action(Line.new(
-		preload("res://audio/voices/0-06-allonsy.wav"), 
-		{}
-	)),
+	# INTRODUCTION
+	# Les rideaux sont fermés
+	action(line(preload("res://audio/voices/0-01-ofatalite.wav"))),
 	choice({
-		"Unique": action(Line.new(
-			preload("res://audio/voices/0-06-allonsy.wav"), 
-			{}
-		)),
+		"Unique": action(line(preload("res://audio/voices/0-06-allonsy.wav"))),
 		"Coucou": action(Action.CurtainsOpening.new())
 	}),
 ])

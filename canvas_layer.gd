@@ -28,6 +28,8 @@ func start_story(current_story: StoryNode) -> void:
 		if i == 1: # sorry for the spaghetti
 			$ChoicesContainer.get_child(1).hide()
 			$ChoicesContainer.get_child(2).hide()
+		if i == 2: # sorry for the spaghetti
+			$ChoicesContainer.get_child(2).hide()
 		return
 	else: # is null
 		$Label.text = '<the end>'

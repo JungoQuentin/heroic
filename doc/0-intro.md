@@ -4,7 +4,7 @@
 - Il imite la princesse qui crie
 - 0-01: "Ô fatalité! Ô sacrilège! Puisse mon courroux te juger de tes actes!"
 - 0-02:**CHOIX 1** : ouvrir les rideaux
-- Rideaux s'ouvre, il apparait, grandiloquant
+- 0-03:Rideaux s'ouvre, il apparait, grandiloquant
 - Il explique : "Le vil, l'abominable chevalier noir, cette pourriture a craché son venin"
 - "Hors de moi, je ne puis me résigner, il a adressé la parole à ma douce et pure princesse"
 - Le public réagis ! Oh!
