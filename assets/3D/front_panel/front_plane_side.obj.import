@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://btrf748mva3fd"
+path="res://.godot/imported/front_plane_side.obj-fdc7c74771498a7fd10247f1198a39ad.mesh"
+
+[deps]
+
+files=["res://.godot/imported/front_plane_side.obj-fdc7c74771498a7fd10247f1198a39ad.mesh"]
+
+source_file="res://assets/3D/front_panel/front_plane_side.obj"
+dest_files=["res://.godot/imported/front_plane_side.obj-fdc7c74771498a7fd10247f1198a39ad.mesh", "res://.godot/imported/front_plane_side.obj-fdc7c74771498a7fd10247f1198a39ad.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

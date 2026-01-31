@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bjs0ccrok6yl5"]
+
+[ext_resource type="Texture2D" uid="uid://b5kbi4gc34sit" path="res://textures/rideaux/Fabric026_1K-JPG_Color.jpg" id="1_n8j2d"]
+[ext_resource type="Texture2D" uid="uid://5odbnutodb2l" path="res://textures/rideaux/Fabric026_1K-JPG_NormalGL.jpg" id="2_mb6xu"]
+
+[resource]
+cull_mode = 2
+albedo_texture = ExtResource("1_n8j2d")
+normal_enabled = true
+normal_texture = ExtResource("2_mb6xu")

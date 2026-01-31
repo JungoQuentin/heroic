@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dqx13uot8s4cv"]
+
+[ext_resource type="PackedScene" uid="uid://c0ybd0s1iqvxm" path="res://assets/3D/rideaux/rideau_gauche.fbx" id="1_v3j6j"]
+[ext_resource type="Material" uid="uid://bjs0ccrok6yl5" path="res://textures/rideaux/rideau.tres" id="2_v3j6j"]
+
+[node name="rideau_gauche" unique_id=1475470428 instance=ExtResource("1_v3j6j")]
+
+[node name="rideau_gauche" parent="." index="0" unique_id=1209311060]
+blend_shapes/Rideau_Blenshape.rideau_gauche_ferme = 1.0
+surface_material_override/0 = ExtResource("2_v3j6j")
