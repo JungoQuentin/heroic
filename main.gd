@@ -112,7 +112,7 @@ func poses_loop(
 		match qui:
 			'p': pass
 			'o': pass
-			'b': 
+			'b':
 				container = b_container
 			'j':
 				container = j_container
@@ -144,7 +144,7 @@ func handle_sfx(action: Action.Sfx) -> void:
 #endregion
 
 #region music
-const default_music_db := -5.0
+const default_music_db := -16.0
 var music_tween: Tween
 
 func handle_music(music: Action.Music) -> void:
@@ -169,14 +169,14 @@ func handle_scene_change(action: Action.SceneChange) -> void:
 	var stage: Node3D = stages[action.scene_name].instantiate()
 	add_child(stage)
 	stage.set_deferred('name', 'stage')
-	
+
 	# le B
 	var b_start = stage.get_node('B_Start')
 	b_container.get_children().map(func(c): c.hide())
 	b_container.get_children().map(func(c): c.position = b_start.position)
 	b_container.get_node("flex_01").show()
 	b_start.queue_free()
-	
+
 	# le J
 	var j_start = stage.get_node_or_null('J_Start')
 	if j_start:
