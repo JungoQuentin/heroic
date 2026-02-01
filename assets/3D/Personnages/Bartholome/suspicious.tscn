@@ -42,6 +42,7 @@ _surfaces = [{
 [node name="Node3D" type="Node3D" unique_id=237000063]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=247718696]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1529274, 0)
 mesh = SubResource("ArrayMesh_7jlc0")
 script = ExtResource("4_q483g")
 source_collision_poly = NodePath("../CollisionPolygon2D")
