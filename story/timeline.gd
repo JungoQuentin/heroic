@@ -7,34 +7,64 @@ func choice(_choices: Dictionary[String, StoryNode]) -> StoryNodeChoice:
 func action(_action: Action) -> StoryNodeAction:
 	return StoryNodeAction.new(_action)
 
-func line(_audio: Resource) -> Line:
-	return Line.new(_audio, {})
+func line(_audio: Resource, _poses: Dictionary[float, Line.Pose] = {}) -> Line:
+	return Line.new(_audio, _poses)
 
 func list(_list: Array[StoryNode]) -> StoryNodeList:
 	return StoryNodeList.new(_list)
 
 var intro = list([
-	# INTRODUCTION
-	# Les rideaux sont fermés
+	# TODO(bonus) -> du bruit de foule, puis le silence
 	# 0-01
-	action(line(preload("res://audio/voices/0-01-ofatalite.wav"))),
+	action(line(
+		preload("res://audio/voices/0-01-ofatalite.wav"), 
+		# Pas de poses -> derriere le rideau !
+	)),
 	# 0-02
 	choice({
 		"Ouvrir les rideaux": action(Action.CurtainsOpening.new()),
 	}),
+	# TODO -> applause !
+	# TODO(bonus) -> apparition trop cool
 	# 0-03
 	# 0-04
-	action(line(preload("res://audio/voices/0-02-levillabominable.wav"))),
+	action(line(
+		preload("res://audio/voices/0-02-levillabominable.wav"), {
+			0.00: Line.Pose.new("flex_03.png"),
+			1.08: Line.Pose.new("flex_01.png"),
+			3.30: Line.Pose.new("flex_02.png"),
+		}
+	)),
 	# 0-05
-	action(line(preload("res://audio/voices/0-03-adresseparole.wav"))),
+	action(line(
+		preload("res://audio/voices/0-03-adresseparole.wav"), {
+			0.00: Line.Pose.new("flex_03.png"),
+			1.01: Line.Pose.new("flex_02.png"),
+		}
+	)),
+	# TODO mettre un cri ? "cri.png"
 	# 0-06
 	action(line(preload("res://audio/voices/public-03-oh.wav"))),
 	# 0-07
-	action(line(preload("res://audio/voices/0-04-monroleproteger.wav"))),
+	action(line(
+		preload("res://audio/voices/0-04-monroleproteger.wav"), {
+			0.00: Line.Pose.new("flex_03.png"),
+			4.44: Line.Pose.new("flex_01.png"),
+		}
+	)),
 	# 0-08
-	action(line(preload("res://audio/voices/0-05-odieuxdonnezmoirage.wav"))),
+	action(line(
+		preload("res://audio/voices/0-05-odieuxdonnezmoirage.wav"), {
+			0.00: Line.Pose.new("flex_03.png"),
+			3.40: Line.Pose.new("enerve_01.png"),
+		}
+	)),
 	# 0-09
-	action(line(preload("res://audio/voices/0-06-allonsy.wav"))),
+	action(line(
+		preload("res://audio/voices/0-06-allonsy.wav"), { 
+			0: Line.Pose.new("flex_03.png") 
+		}
+	)),
 	# 0-10
 	action(Action.CurtainsClosing.new()),
 	# 0-11

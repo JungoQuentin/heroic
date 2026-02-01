@@ -36,3 +36,5 @@ text = "Choix C
 [node name="DialogAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=557127955]
 
 [node name="World" parent="." unique_id=1283472454 instance=ExtResource("3_h2yge")]
+
+[node name="Characters" type="Node3D" parent="." unique_id=550511979]

@@ -1,4 +1,4 @@
-@abstract class_name Action extends Resource
+@abstract class_name Action
 
 class CurtainsOpening extends Action:pass
 class CurtainsClosing extends Action:pass

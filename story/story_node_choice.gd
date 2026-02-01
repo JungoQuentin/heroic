@@ -4,7 +4,8 @@ class_name StoryNodeChoice extends StoryNode
 @export var choices: Dictionary[String, StoryNode]
 
 func _init(_choices: Dictionary[String, StoryNode]) -> void:
-	self.choices = _choices
+	choices = _choices
+	assert(!choices.is_empty(), "should have choices")
 
 func _to_string() -> String:
 	return ", ".join(self.choices.values())
