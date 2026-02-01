@@ -36,13 +36,13 @@ func _ready() -> void:
 		var n: Node3D = b[bart].instantiate()
 		b_container.add_child(n)
 		n.hide()
-		n.rotation.y = -90
+		n.rotation.y = deg_to_rad(-90.)
 		n.name = bart
 	for jorge in j.keys():
 		var n: Node3D = j[jorge].instantiate()
 		j_container.add_child(n)
 		n.hide()
-		n.rotation.y = -90
+		n.rotation.y = deg_to_rad(-90.)
 		n.name = jorge
 	start_story(Timeline.new().story)
 
