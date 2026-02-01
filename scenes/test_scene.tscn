@@ -12,8 +12,9 @@
 [ext_resource type="ArrayMesh" uid="uid://bn5lls1efuvah" path="res://assets/3D/middle_panel/middle_panel_side.obj" id="11_gthg3"]
 [ext_resource type="Texture2D" uid="uid://hkwqnoxkdvn5" path="res://textures/wood/6453600.jpg" id="12_gthg3"]
 [ext_resource type="Texture2D" uid="uid://ba1nw4insj3ab" path="res://assets/2D/Publique/theatre_public_blocking.png" id="13_ntc4i"]
-[ext_resource type="PackedScene" uid="uid://dyof51lxc72by" path="res://assets/2D/test/test.tscn" id="13_u0xbq"]
-[ext_resource type="PackedScene" uid="uid://c5m7oobcyiyqx" path="res://assets/3D/Personnages/Bartholome/cri.tscn" id="14_u0xbq"]
+[ext_resource type="PackedScene" uid="uid://ckbl3h8c0bbi7" path="res://scenes/stages/stage_intro.tscn" id="13_u0xbq"]
+[ext_resource type="PackedScene" uid="uid://ci2qk7xtwlwvf" path="res://scenes/stages/stage_fontaine.tscn" id="14_u0xbq"]
+[ext_resource type="PackedScene" uid="uid://bngfwr25xcu7u" path="res://scenes/stages/stage_armurerie.tscn" id="15_pln1h"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gthg3"]
 sky_top_color = Color(0.40349752, 0.23201117, 0.09611865, 1)
@@ -103,68 +104,14 @@ visible = false
 
 [node name="mainSpot" type="SpotLight3D" parent="Lights" unique_id=123069841]
 transform = Transform3D(0.49999997, 3.7855173e-08, -0.86602545, 0.86602545, -2.185569e-08, 0.49999997, 0, -1, -4.371139e-08, -15.728101, 12.38589, 0)
+visible = false
 light_energy = 32.0
 shadow_enabled = true
 spot_range = 33.818066
 spot_angle = 20.503931
 
-[node name="smallSpots_01" type="Node3D" parent="Lights" unique_id=1183612313]
-
-[node name="SpotLight3D" type="SpotLight3D" parent="Lights/smallSpots_01" unique_id=629772085]
-transform = Transform3D(0.9785665, -9.001526e-09, 0.20593092, -0.20593092, -4.2774502e-08, 0.9785665, 0, -1, -4.371139e-08, 7.4759836, 12.38589, 0)
-light_energy = 32.0
-shadow_enabled = true
-distance_fade_enabled = true
-spot_range = 14.109379
-spot_angle = 13.22
-
-[node name="SpotLight3D3" type="SpotLight3D" parent="Lights/smallSpots_01" unique_id=1711019095]
-transform = Transform3D(0.9785665, -9.001526e-09, 0.20593092, -0.20593092, -4.2774502e-08, 0.9785665, 0, -1, -4.371139e-08, 7.4759836, 12.38589, -6)
-light_energy = 32.0
-shadow_enabled = true
-distance_fade_enabled = true
-spot_range = 14.109379
-spot_angle = 13.22
-
-[node name="SpotLight3D2" type="SpotLight3D" parent="Lights/smallSpots_01" unique_id=1060351338]
-transform = Transform3D(0.9785665, -9.001526e-09, 0.20593092, -0.20593092, -4.2774502e-08, 0.9785665, 0, -1, -4.371139e-08, 7.4759836, 12.38589, 6)
-light_energy = 32.0
-shadow_enabled = true
-distance_fade_enabled = true
-spot_range = 14.109379
-spot_angle = 13.22
-
-[node name="smallSpots_02" type="Node3D" parent="Lights" unique_id=402246300]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.302512, 3.9196339, 0)
-
-[node name="SpotLight3D" type="SpotLight3D" parent="Lights/smallSpots_02" unique_id=1162719685]
-transform = Transform3D(0.99418676, 4.7063926e-09, -0.10766968, 0.10766968, -4.3457284e-08, 0.99418676, 0, -1, -4.371139e-08, 7.4759836, 12.385889, 0)
-light_energy = 32.0
-shadow_enabled = true
-distance_fade_enabled = true
-spot_range = 22.743
-spot_attenuation = 1.66
-spot_angle = 40.95
-
-[node name="SpotLight3D3" type="SpotLight3D" parent="Lights/smallSpots_02" unique_id=1008327735]
-transform = Transform3D(0.99418676, 4.7063926e-09, -0.10766968, 0.10766968, -4.3457284e-08, 0.99418676, 0, -1, -4.371139e-08, 7.4759836, 12.385889, -6)
-light_energy = 32.0
-shadow_enabled = true
-distance_fade_enabled = true
-spot_range = 22.743
-spot_attenuation = 1.66
-spot_angle = 40.95
-
-[node name="SpotLight3D2" type="SpotLight3D" parent="Lights/smallSpots_02" unique_id=274644143]
-transform = Transform3D(0.99418676, 4.7063926e-09, -0.10766968, 0.10766968, -4.3457284e-08, 0.99418676, 0, -1, -4.371139e-08, 7.4759836, 12.385889, 6)
-light_energy = 32.0
-shadow_enabled = true
-distance_fade_enabled = true
-spot_range = 22.743
-spot_attenuation = 1.66
-spot_angle = 40.95
-
 [node name="stageSpots" type="Node3D" parent="Lights" unique_id=166552846]
+visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Lights/stageSpots" unique_id=1051379313]
 transform = Transform3D(0.3554985, -0.44218537, -0.823464, -2.0679378e-08, 0.88101465, -0.47308904, 0.9346768, 0.16818245, 0.31319937, 0, 0.47841585, 0)
@@ -253,9 +200,10 @@ mesh = ExtResource("11_gthg3")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("ShaderMaterial_gthg3")
 
-[node name="Node3D" parent="." unique_id=237000063 instance=ExtResource("13_u0xbq")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.3992434, 2.4484649, -3.4021535)
+[node name="Stage_Intro" parent="." unique_id=1741336231 instance=ExtResource("13_u0xbq")]
+
+[node name="Stage_Fontaine" parent="." unique_id=166642736 instance=ExtResource("14_u0xbq")]
 visible = false
 
-[node name="Node3D2" parent="." unique_id=2130307373 instance=ExtResource("14_u0xbq")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.1131735, 2.1943862, -0.4156747)
+[node name="Stage_Armurerie" parent="." unique_id=733744228 instance=ExtResource("15_pln1h")]
+visible = false
