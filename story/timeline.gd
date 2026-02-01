@@ -3,6 +3,7 @@ class_name Timeline
 const MIntro = preload("res://audio/music/intro-v1.mp3")
 const MBoss = preload("res://audio/music/boss-v1.mp3")
 const MShop = preload("res://audio/music/shop-v1.mp3")
+const MPublicWait = preload("res://audio/sfx/public_qui_attend.mp3")
 
 func choice(_choices: Dictionary[String, StoryNode]) -> StoryNodeChoice:
 	return StoryNodeChoice.new(_choices)
@@ -18,9 +19,17 @@ func list(_list: Array[StoryNode]) -> StoryNodeList:
 
 var intro = list([
 	action(Action.SceneChange.new("intro")),
-	# TODO(bonus) -> du bruit de foule, puis le silence
-	#action(Action.Music.new(MIntro)),
+	action(Action.Wait.new(0.1)),
+	action(Action.TurnOffLight.new()),
+	action(Action.Music.new(MPublicWait)),
+	action(Action.Wait.new(5.)),
+	action(Action.Music.new(MPublicWait, Action.MusicAction.STOP)),
+	action(Action.TurnOnLight.new()),
+	
 	action(Action.Wait.new(2.)),
+	action(Action.Music.new(MIntro)),
+	action(Action.Wait.new(2.)),
+	
 	# 0-01
 	action(line(
 		'b',
@@ -31,8 +40,7 @@ var intro = list([
 	choice({
 		"Ouvrir les rideaux": action(Action.CurtainsOpening.new()),
 	}),
-	# TODO -> applause !
-	# TODO(bonus) -> apparition trop cool
+	action(Action.Sfx.new(preload("res://audio/sfx/applaudissement.mp3"), 5.)),
 	# 0-03
 	# 0-04
 	action(line(
@@ -85,8 +93,7 @@ var intro = list([
 	
 	action(Action.Music.new(MIntro, Action.MusicAction.STOP)),
 	
-	# TODO applause
-	action(Action.Wait.new(4.)),
+	action(Action.Sfx.new(preload("res://audio/sfx/applaudissement.mp3"), 5.)),
 ])
 
 #region ARMOR PLACE
@@ -120,16 +127,15 @@ var armor_place_with_jorge = list([
 	action(Line.new('b', preload("res://audio/voices/b-happy.wav"), {
 		0.00: Line.Pose.new("monture_01")
 	})),
-	action(Action.Wait.new(1.))
+	action(Action.Wait.new(1.)),
 ])
 
 var armor_place_without_budget = list([
-	# TODO garder l'info *-> en fait Jorge jouerai le méchant -> on le reconnaitra*
 	# 2-B-1
 	action(line('o', preload("res://audio/voices/voixoff-01-nomonture.wav"))),
 	# 2-B-2
-	action(line('b', preload("res://audio/voices/b-tousse.wav"))),
-	# 2-B-3 TODO B est énervé de cette situation
+	action(line('b', preload("res://audio/voices/b-tousse.wav"), {0.: Line.Pose.new("enerve_02")})),
+	action(Action.Wait.new(0.5)),
 	# 2-A-3
 	choice(sword_vs_brosse),
 	# 2-B-4 TODO Et au lieu de monter sur son dos, juste il part
@@ -147,29 +153,36 @@ var armor_place = list([
 	action(Action.SceneChange.new("armurerie")),
 	action(Action.JorgeHide.new()),
 	action(Action.CurtainsOpening.new()),
-	# 1-01 -> TODO Il arrive, il y a pleins de gens sur scene (des paysans)
-	# 1-02 -> TODO Il regarde le public, comme s'il s'attendait à ce que le public l'aclame
-	# 1-03
+	## 1-03
 	choice({
-		"Ils l'acclament": list([ # TODO paralel ? -> sinon bruitage special
-			action(line('p', preload("res://audio/voices/public-05-bravo.wav"))),
-			action(line('p', preload("res://audio/voices/public-07-oui.wav"))),
-			action(line('p', preload("res://audio/voices/public-06-bravo.wav"))),
+		"Ils l'acclament": list([
+			action(Action.Sfx.new(preload("res://audio/sfx/cheers_paysan.mp3"), 5.)),
+			action(Action.PaysanCiao.new()),
 		]),
 		# 1-05
-		"Ils partent": action(line(
-			'b',
-			preload("res://audio/voices/b-deg.wav"), {
-				0.00: Line.Pose.new("suspicious")
-			}
-		)), 
+		"Ils partent": list([
+			action(Action.Wait.new(0.6)),
+			action(Action.PaysanCiao.new()),
+			action(Action.Wait.new(0.5)),
+			action(line(
+				'b',
+				preload("res://audio/voices/b-deg.wav"), {
+					0.00: Line.Pose.new("suspicious")
+				}
+			)),
+			action(Action.Wait.new(1.)),
+		]), 
 		# 1-06
-		"Ils l'ignorent": action(line(
-			'b',
-			preload("res://audio/voices/b-deg.wav"), {
-				0.00: Line.Pose.new("enerve_02")
-			}
-		)),
+		"Ils l'ignorent": list([
+			action(Action.Wait.new(1.5)),
+			action(line(
+				'b',
+				preload("res://audio/voices/b-deg.wav"), {
+					0.00: Line.Pose.new("enerve_02")
+				}
+			)),
+			action(Action.Wait.new(0.5)),
+		]) 
 	}),
 	# 1-07
 	action(line(
@@ -181,6 +194,7 @@ var armor_place = list([
 			2.25: Line.Pose.new("flex_01"),
 		}
 	)),
+	action(Action.PaysanCiao.new()),
 	# 1-08
 	action(line(
 		'b',

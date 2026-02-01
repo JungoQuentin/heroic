@@ -12,6 +12,15 @@ class JorgeHide extends Action:pass
 
 class JorgeShow extends Action:pass
 
+class PaysanCiao extends Action:pass
+
+class Sfx extends Action:
+	var stream: AudioStream
+	var time: float
+	func _init(s, t = -1.) -> void:
+		stream = s
+		time = t
+
 class SceneChange extends Action:
 	var scene_name: String
 	func _init(_scene: String):

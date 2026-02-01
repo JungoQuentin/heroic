@@ -51,6 +51,8 @@ icon_alignment = 1
 
 [node name="MusicAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=728339697]
 
+[node name="SfxAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1152798780]
+
 [node name="World" parent="." unique_id=1283472454 instance=ExtResource("3_h2yge")]
 
 [node name="Characters" type="Node3D" parent="." unique_id=550511979]

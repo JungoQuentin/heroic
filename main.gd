@@ -4,6 +4,7 @@ class_name Main extends Node3D
 @onready var world: BWorld = $World
 @onready var dialog_stream_player: AudioStreamPlayer = $DialogAudioStreamPlayer
 @onready var music_stream_player: AudioStreamPlayer = $MusicAudioStreamPlayer
+@onready var sfx_stream_player: AudioStreamPlayer = $SfxAudioStreamPlayer
 @onready var b_container: Node3D = $Characters/B
 @onready var j_container: Node3D = $Characters/J
 
@@ -82,10 +83,15 @@ func execute_action(action: Action) -> void:
 		get_node('stage/Scene_Lights').hide()
 	elif action is Action.TurnOnLight:
 		get_node('stage/Scene_Lights').show()
+	elif action is Action.PaysanCiao:
+		if get_node_or_null('stage/paysans') != null:
+			get_node('stage/paysans').hide()
 	elif action is Action.JorgeHide:
 		j_container.get_children().map(func(n): n.hide())
 	elif action is Action.JorgeShow:
 		j_container.get_node("blaze_01").show()
+	elif action is Action.Sfx:
+		await handle_sfx(action)
 	elif action is Action.Music:
 		handle_music(action)
 	else:
@@ -120,6 +126,22 @@ func poses_loop(
 	await get_tree().create_timer(0.07).timeout
 	poses_loop(qui, poses_times, started_since)
 
+#region sfx
+var sfx_tween: Tween
+func handle_sfx(action: Action.Sfx) -> void:
+	if music_tween != null:
+		music_tween.stop()
+		await get_tree().create_timer(0.1).timeout
+	sfx_stream_player.stream = action.stream
+	sfx_stream_player.play()
+	if action.time > 0.:
+		await get_tree().create_timer(action.time - 1.).timeout
+		sfx_tween = create_tween().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_SINE)
+		sfx_tween.tween_property(sfx_stream_player, "volume_db", -80., 1.5)
+		await sfx_tween.finished
+	else:
+		await sfx_stream_player.finished
+#endregion
 
 #region music
 const default_music_db := -5.0
