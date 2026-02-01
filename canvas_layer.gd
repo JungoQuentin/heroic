@@ -16,7 +16,7 @@ func display_choices(choices: Dictionary[String, StoryNode]) -> StoryNode:
 		disconnect_all(button.pressed)
 	var i = 0
 	for choice in choices:
-		var button = $ChoicesContainer.get_child(i)
+		var button: Button = $ChoicesContainer.get_child(i)
 		button.show()
 		button.text = choice
 		button.pressed.connect(
@@ -25,6 +25,7 @@ func display_choices(choices: Dictionary[String, StoryNode]) -> StoryNode:
 				_choices_made.emit()
 				$ChoicesContainer.hide()
 		)
+		button.set("theme_override_font_sizes/font_size", 100 - len(choice))
 		i += 1
 	await _choices_made
 	assert(_choice != null, "should have a choice")

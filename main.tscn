@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dl42sr527mgru" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://cmysn2udtxgr7" path="res://canvas_layer.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://r7oqvcqkwqu6" path="res://scenes/world.tscn" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://c117603njeu6c" path="res://assets/2D/pancart.png" id="3_lquwl"]
 [ext_resource type="PackedScene" uid="uid://c5m7oobcyiyqx" path="res://assets/3D/Personnages/Bartholome/cri.tscn" id="4_1bvp3"]
 
 [node name="Main" type="Node3D" unique_id=685122384]
@@ -11,28 +12,40 @@ script = ExtResource("1_0xm2m")
 [node name="Ui" type="CanvasLayer" parent="." unique_id=1047050145]
 script = ExtResource("1_ig7tw")
 
-[node name="ChoicesContainer" type="HBoxContainer" parent="Ui" unique_id=1901963403]
-anchors_preset = 12
-anchor_top = 1.0
+[node name="ChoicesContainer" type="VBoxContainer" parent="Ui" unique_id=1245376227]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -135.0
+offset_top = -191.5
+offset_right = -209.0
+offset_bottom = 191.5
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 alignment = 1
 
-[node name="Button" type="Button" parent="Ui/ChoicesContainer" unique_id=1924117247]
+[node name="Button1" type="Button" parent="Ui/ChoicesContainer" unique_id=460665892]
 layout_mode = 2
+text = "aoneutbaotnasoetuhnsatenu"
+icon = ExtResource("3_lquwl")
+flat = true
+autowrap_mode = 1
+icon_alignment = 1
+
+[node name="Button2" type="Button" parent="Ui/ChoicesContainer" unique_id=280429606]
+layout_mode = 2
+theme_override_font_sizes/font_size = 134
 text = "Choix A"
+icon = ExtResource("3_lquwl")
+flat = true
+icon_alignment = 1
 
-[node name="Button2" type="Button" parent="Ui/ChoicesContainer" unique_id=711560342]
+[node name="Button3" type="Button" parent="Ui/ChoicesContainer" unique_id=453131466]
 layout_mode = 2
-text = "Choix B"
-
-[node name="Button3" type="Button" parent="Ui/ChoicesContainer" unique_id=1554165484]
-layout_mode = 2
-text = "Choix C
-"
+theme_override_font_sizes/font_size = 134
+text = "Choix A"
+icon = ExtResource("3_lquwl")
+flat = true
+icon_alignment = 1
 
 [node name="DialogAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=557127955]
 
