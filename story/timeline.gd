@@ -97,10 +97,6 @@ var intro = list([
 ])
 
 #region ARMOR PLACE
-var sword_vs_brosse: Dictionary[String, StoryNode] = {
-	"Epee": list([]),
-	"Brosse": list([]),
-}
 
 var armor_place_with_jorge = list([
 	# 2-A-1
@@ -113,9 +109,11 @@ var armor_place_with_jorge = list([
 		}
 	)),
 	# 2-A-3
-	choice(sword_vs_brosse.merged({
+	choice({
 		"Le jumeau de Jorge": list([]),
-	})),
+		"Epee": list([]),
+		"Brosse": list([]),
+	}),
 	# 2-A-7
 	action(line('b', preload("res://audio/voices/2a-02-mevoilapret.wav"))),
 	# 2-A-8 
@@ -137,7 +135,10 @@ var armor_place_without_budget = list([
 	action(line('b', preload("res://audio/voices/b-tousse.wav"), {0.: Line.Pose.new("enerve_02")})),
 	action(Action.Wait.new(0.5)),
 	# 2-A-3
-	choice(sword_vs_brosse),
+	choice({
+		"Epee": list([]),
+		"Brosse": list([]),
+	}),
 	# 2-B-4 TODO Et au lieu de monter sur son dos, juste il part
 ])
 
@@ -247,7 +248,9 @@ var affrontement = list([
 	# 3-9 Pétage de plomb de Jorge
 	# 3-10
 	action(line('j', preload("res://audio/voices/3a-01-j-tondosjorge.wav"))),
-	# 3-11 TODO devient intense, juste 2 epees qui se rapproche, jusqu'au "chling" de fin (coup d'epee)
+	
+	action(Action.Sfx.new(preload("res://audio/sfx/sword_fight.mp3"))),
+	
 	action(Action.TurnOffLight.new()),
 	action(Action.Wait.new(2.)),
 	choice({
@@ -266,7 +269,7 @@ var affrontement = list([
 		"Bartholome victorieux": action(line('o', preload("res://audio/voices/voixoff-4a-fin.wav"))),
 	}),
 	action(Action.Wait.new(3.)),
-	# TODO Applause ! Et fin !
+	action(Action.Sfx.new(preload("res://audio/sfx/applaudissement.mp3"))),
 ])
 
 
