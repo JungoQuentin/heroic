@@ -128,20 +128,7 @@ var armor_place_with_jorge = list([
 	action(Action.Wait.new(1.)),
 ])
 
-var armor_place_without_budget = list([
-	action(Action.Music.new(MShop, Action.MusicAction.STOP)),
-	# 2-B-1
-	action(line('o', preload("res://audio/voices/voixoff-01-nomonture.wav"))),
-	# 2-B-2
-	action(line('b', preload("res://audio/voices/b-tousse.wav"), {0.: Line.Pose.new("enerve_02")})),
-	action(Action.Wait.new(0.5)),
-	# 2-A-3
-	choice({
-		"Epee": list([]),
-		"Brosse": list([]),
-	}),
-	# 2-B-4 TODO Et au lieu de monter sur son dos, juste il part
-])
+#var armor_place_without_budget = 
 
 var armor_place_light_on_public = list([
 	# 2-C-1 TODO moment de silence
@@ -210,7 +197,20 @@ var armor_place = list([
 	# 1-09
 	choice({
 		"Jorge": armor_place_with_jorge,
-		"Nous rencontrons un manque de budget": armor_place_without_budget,
+		"Nous rencontrons un manque de budget": list([
+			action(Action.Music.new(MShop, Action.MusicAction.STOP)),
+			# 2-B-1
+			action(line('o', preload("res://audio/voices/voixoff-01-nomonture.wav"))),
+			# 2-B-2
+			action(line('b', preload("res://audio/voices/b-tousse.wav"), {0.: Line.Pose.new("enerve_02")})),
+			action(Action.Wait.new(0.5)),
+			# 2-A-3
+			#choice({
+				#"Epee": list([]),
+				#"Brosse": list([]),
+			#}),
+			# 2-B-4 TODO Et au lieu de monter sur son dos, juste il part
+		]),
 		"Lumiere": armor_place_light_on_public,
 	}),
 ])
