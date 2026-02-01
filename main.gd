@@ -9,16 +9,18 @@ class_name Main extends Node3D
 
 var b: Dictionary[String, PackedScene] = {
 	"enerve_01": preload("res://assets/3D/Personnages/Bartholome/enerve_01.tscn"),
+	"enerve_02": preload("res://assets/3D/Personnages/Bartholome/enerve_02.tscn"),
 	"flex_01": preload("res://assets/3D/Personnages/Bartholome/flex_01.tscn"),
 	"flex_02": preload("res://assets/3D/Personnages/Bartholome/flex_02.tscn"),
 	"flex_03": preload("res://assets/3D/Personnages/Bartholome/flex_03.tscn"),
+	"suspicious": preload("res://assets/3D/Personnages/Bartholome/suspicious.tscn"),
+	"cri": preload("res://assets/3D/Personnages/Bartholome/cri.tscn"),
 }
 
 var j: Dictionary[String, PackedScene] = {
 }
 
 func _ready() -> void:
-	start_story(Timeline.new().story)
 	for bart in b.keys():
 		var n: Node3D = b[bart].instantiate()
 		b_container.add_child(n)
@@ -29,6 +31,7 @@ func _ready() -> void:
 		j_container.add_child(n)
 		n.hide()
 		n.name = jorge
+	start_story(Timeline.new().story)
 
 
 func start_story(current_story: StoryNode) -> void:
