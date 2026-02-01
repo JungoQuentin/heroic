@@ -62,14 +62,14 @@ spot_attenuation = 0.0
 spot_angle = 73.125
 
 [node name="SpotLight2" type="SpotLight3D" parent="Scene_Lights" unique_id=1444521823]
-transform = Transform3D(-0.041948885, 0.0631041, -0.99712497, 0.99911624, 1.837306e-09, -0.04203266, -0.0026524314, -0.99800694, -0.06304833, 0.62891436, 7.7278876, 0)
+transform = Transform3D(-0.041948885, 0.0631041, -0.99712497, 0.99911624, 1.604681e-09, -0.04203266, -0.0026524314, -0.99800694, -0.06304833, 4, 7.728, 0)
 light_energy = 25.0
 shadow_enabled = true
 shadow_bias = 2.0
 shadow_normal_bias = 2.0
-spot_range = 13.279
+spot_range = 9.10708
 spot_attenuation = 1.01
-spot_angle = 11.62
+spot_angle = 17.976864
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Scene_Lights" unique_id=1113365477]
 transform = Transform3D(0.8726052, 0.41185123, -0.2625618, -0.094844356, 0.67021465, 0.73608214, 0.47912905, -0.61740667, 0.6238946, 4.095956, 11.687504, 13.060104)
