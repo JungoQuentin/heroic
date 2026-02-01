@@ -129,6 +129,7 @@ var armor_place_with_jorge = list([
 ])
 
 var armor_place_without_budget = list([
+	action(Action.Music.new(MShop, Action.MusicAction.STOP)),
 	# 2-B-1
 	action(line('o', preload("res://audio/voices/voixoff-01-nomonture.wav"))),
 	# 2-B-2
@@ -152,6 +153,8 @@ var armor_place_light_on_public = list([
 
 var armor_place = list([
 	action(Action.SceneChange.new("armurerie")),
+	action(Action.Music.new(MShop)),
+	
 	action(Action.JorgeHide.new()),
 	action(Action.CurtainsOpening.new()),
 	## 1-03
@@ -237,6 +240,7 @@ var affrontement = list([
 	# 3-6
 	action(Action.CurtainsClosing.new()),
 	action(Action.SceneChange.new("fontaine")),
+	action(Action.Music.new(MBoss)),
 	# 3-7
 	action(Action.CurtainsOpening.new()),
 	action(line(
@@ -253,6 +257,7 @@ var affrontement = list([
 	
 	action(Action.TurnOffLight.new()),
 	action(Action.Wait.new(2.)),
+	action(Action.Music.new(MBoss, Action.MusicAction.STOP)),
 	choice({
 		"Bartholome est vaincueur": list([
 			action(Action.JorgeHide.new()),
