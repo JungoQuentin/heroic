@@ -23,12 +23,12 @@ ground_bottom_color = Color(0, 0, 0, 1)
 ground_horizon_color = Color(0.31640095, 0.27352935, 0.23955622, 1)
 energy_multiplier = 0.2
 
-[sub_resource type="Sky" id="Sky_ntc4i"]
+[sub_resource type="Sky" id="Sky_pln1h"]
 sky_material = SubResource("ProceduralSkyMaterial_gthg3")
 
 [sub_resource type="Environment" id="Environment_u0xbq"]
 background_mode = 2
-sky = SubResource("Sky_ntc4i")
+sky = SubResource("Sky_pln1h")
 tonemap_mode = 2
 glow_enabled = true
 
@@ -93,12 +93,10 @@ transform = Transform3D(-4.371139e-08, 0.017452406, -0.9998477, 0, 0.9998477, 0.
 fov = 46.7
 
 [node name="rideau_droite" parent="." unique_id=1497206293 instance=ExtResource("8_njel3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8008442, 0, 0)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.801, 0, 4.5)
 
 [node name="rideau_gauche" parent="." unique_id=1475470428 instance=ExtResource("9_vr1i5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8008442, 0, 0)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.801, 0, -4.5)
 
 [node name="Lights" type="Node3D" parent="." unique_id=1130469808]
 
@@ -207,4 +205,3 @@ visible = false
 visible = false
 
 [node name="Stage_Armurerie" parent="." unique_id=733744228 instance=ExtResource("15_pln1h")]
-visible = false
