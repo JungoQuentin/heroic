@@ -82,8 +82,10 @@ func execute_action(action: Action) -> void:
 		get_node('stage/Scene_Lights').hide()
 	elif action is Action.TurnOnLight:
 		get_node('stage/Scene_Lights').show()
-	elif action is Action.JorgeDied:
+	elif action is Action.JorgeHide:
 		j_container.get_children().map(func(n): n.hide())
+	elif action is Action.JorgeShow:
+		j_container.get_node("blaze_01").show()
 	elif action is Action.Music:
 		handle_music(action)
 	else:
@@ -144,7 +146,7 @@ func handle_scene_change(action: Action.SceneChange) -> void:
 		current_stage.queue_free()
 	var stage: Node3D = stages[action.scene_name].instantiate()
 	add_child(stage)
-	stage.name = 'stage'
+	stage.set_deferred('name', 'stage')
 	
 	# le B
 	var b_start = stage.get_node('B_Start')

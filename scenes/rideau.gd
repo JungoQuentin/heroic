@@ -3,7 +3,7 @@ extends Node3D
 @export var is_right: bool = true
 @onready var node_path = "rideau_droite" if is_right else "rideau_gauche"
 @onready var pros_path = "blend_shapes/Rideau_Blenshape1.rideau_droite_ferme" if is_right else "blend_shapes/Rideau_Blenshape.rideau_gauche_ferme"
-@onready var final_pos = 2.5 if is_right else -2.5
+@onready var final_pos = 4.6 if is_right else -4.6
 
 const ANIM_TIME:= 1.3
 

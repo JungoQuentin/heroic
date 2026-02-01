@@ -8,7 +8,9 @@ class TurnOffLight extends Action:pass
 
 class TurnOnLight extends Action:pass
 
-class JorgeDied extends Action:pass
+class JorgeHide extends Action:pass
+
+class JorgeShow extends Action:pass
 
 class SceneChange extends Action:
 	var scene_name: String

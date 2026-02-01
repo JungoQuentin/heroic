@@ -96,7 +96,8 @@ var sword_vs_brosse: Dictionary[String, StoryNode] = {
 }
 
 var armor_place_with_jorge = list([
-	# 2-A-1 TODO Jorge arrive
+	# 2-A-1
+	action(Action.JorgeShow.new()),
 	# 2-A-2
 	action(line(
 		'j',
@@ -114,7 +115,12 @@ var armor_place_with_jorge = list([
 	action(line('b', preload("res://audio/voices/2a-03-j-sibongout.wav"))),
 	# 2-A-9 
 	action(line('b', preload("res://audio/voices/2a-04-enroutecheval.wav"))),
-	# 2-A-10 TODO - Jorge se met à 4 pattes, et le héros monte sur son dos pour partir
+	
+	action(Action.JorgeHide.new()),
+	action(Line.new('b', preload("res://audio/voices/b-happy.wav"), {
+		0.00: Line.Pose.new("monture_01")
+	})),
+	action(Action.Wait.new(1.))
 ])
 
 var armor_place_without_budget = list([
@@ -139,6 +145,7 @@ var armor_place_light_on_public = list([
 
 var armor_place = list([
 	action(Action.SceneChange.new("armurerie")),
+	action(Action.JorgeHide.new()),
 	action(Action.CurtainsOpening.new()),
 	# 1-01 -> TODO Il arrive, il y a pleins de gens sur scene (des paysans)
 	# 1-02 -> TODO Il regarde le public, comme s'il s'attendait à ce que le public l'aclame
@@ -231,13 +238,13 @@ var affrontement = list([
 	action(Action.Wait.new(2.)),
 	choice({
 		"Bartholome est vaincueur": list([
-			action(Action.JorgeDied.new()),
+			action(Action.JorgeHide.new()),
 			action(Action.TurnOnLight.new()),
 			action(triomphe),
 			action(Action.CurtainsClosing.new()),
 		]),
 		"Bartholome est le vaincueur": list([
-			action(Action.JorgeDied.new()),
+			action(Action.JorgeHide.new()),
 			action(Action.TurnOnLight.new()),
 			action(triomphe),
 			action(Action.CurtainsClosing.new()),
