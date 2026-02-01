@@ -128,11 +128,14 @@ func poses_loop(
 
 #region sfx
 var sfx_tween: Tween
+const default_sfx_db := -1.
+
 func handle_sfx(action: Action.Sfx) -> void:
 	if music_tween != null:
 		music_tween.stop()
 		await get_tree().create_timer(0.1).timeout
 	sfx_stream_player.stream = action.stream
+	sfx_stream_player.volume_db = default_music_db
 	sfx_stream_player.play()
 	if action.time > 0.:
 		await get_tree().create_timer(action.time - 1.).timeout
