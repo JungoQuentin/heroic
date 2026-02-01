@@ -21,9 +21,6 @@ config/icon="res://sprites/pose_a.svg"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
-window/size/mode=2
 window/main_scene="uid://c2mqu2eewf8j"
 
 [rendering]
