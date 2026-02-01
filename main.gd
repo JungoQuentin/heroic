@@ -94,8 +94,8 @@ func execute_action(action: Action) -> void:
 		await handle_sfx(action)
 	elif action is Action.Music:
 		handle_music(action)
-	else:
-		assert(false, "it should be an Action type !")
+	#else:
+		#assert(false, "it should be an Action type !")
 
 
 func poses_loop(

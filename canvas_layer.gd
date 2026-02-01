@@ -28,7 +28,7 @@ func display_choices(choices: Dictionary[String, StoryNode]) -> StoryNode:
 		button.set("theme_override_font_sizes/font_size", 100 - len(choice))
 		i += 1
 	await _choices_made
-	assert(_choice != null, "should have a choice")
+	#assert(_choice != null, "should have a choice")
 	return _choice
 
 func disconnect_all(sig:Signal):

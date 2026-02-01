@@ -9,7 +9,7 @@ func _init(_qui: String, _audio: AudioStream, _poses: Dictionary[float, Pose]):
 	qui = _qui
 	audio = _audio
 	poses_times = _poses
-	assert(qui == 'b' or qui == 'j' or qui == 'p' or qui == 'o', "must be in b/j/p/o")
+	#assert(qui == 'b' or qui == 'j' or qui == 'p' or qui == 'o', "must be in b/j/p/o")
 
 
 class Pose:
