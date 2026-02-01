@@ -45,4 +45,4 @@ jobs:
           ./butler -V
           ./butler login
           zip -r site _site
-          ./butler push site.zip memeandme/bartholom-adventures:web-final
+          ./butler push site.zip memeandme/bartholome-adventures:web-final
