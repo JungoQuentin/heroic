@@ -18,8 +18,8 @@ func list(_list: Array[StoryNode]) -> StoryNodeList:
 
 var intro = list([
 	# TODO(bonus) -> du bruit de foule, puis le silence
-	action(Action.Music.new(MIntro)),
-	action(Action.Wait.new(4.)),
+	#action(Action.Music.new(MIntro)),
+	#action(Action.Wait.new(4.)),
 	# 0-01
 	action(line(
 		preload("res://audio/voices/0-01-ofatalite.wav"),
@@ -83,30 +83,6 @@ var intro = list([
 ])
 
 #region ARMOR PLACE
-
-var armor_place = list([
-	action(Action.SceneChange.new("")),
-	action(Action.CurtainsOpening.new()),
-	# 1-01 -> TODO Il arrive, il y a pleins de gens sur scene (des paysans)
-	# 1-02 -> TODO Il regarde le public, comme s'il s'attendait à ce que le public l'aclame
-	# 1-03
-	choice({
-		"Ils l'acclament": null, # Normal
-		"Ils partent": null, # 1-05 -> TODO piss off
-		"Ils l'ignorent": null, # 1-06 -> TODO piss off
-	}),
-	# 1-07
-	action(line(preload("res://audio/voices/1-01-assezdevoir.wav"))),
-	# 1-08
-	action(line(preload("res://audio/voices/1-02-monecuyer.wav"))),
-	# 1-09
-	choice({
-		"Jorge": armor_place_with_jorge,
-		"Nous rencontrons un manque de budget": armor_place_without_budget,
-		"Lumiere": armor_place_light_on_public,
-	}),
-])
-
 var sword_vs_brosse: Dictionary[String, StoryNode] = {
 	"Epee": list([]),
 	"Brosse": list([]),
@@ -147,6 +123,55 @@ var armor_place_light_on_public = list([
 	action(line(preload("res://audio/voices/b-tousse.wav"))),
 	# 2-C-3 TODO travalto confused -> est confused, puis par du public
 	# 2-C-4 B:"hem hem", prend son épée et part
+])
+
+var armor_place = list([
+	action(Action.SceneChange.new("")),
+	action(Action.CurtainsOpening.new()),
+	# 1-01 -> TODO Il arrive, il y a pleins de gens sur scene (des paysans)
+	# 1-02 -> TODO Il regarde le public, comme s'il s'attendait à ce que le public l'aclame
+	# 1-03
+	choice({
+		"Ils l'acclament": list([ # TODO paralel ? -> sinon bruitage special
+			action(line(preload("res://audio/voices/public-05-bravo.wav"))),
+			action(line(preload("res://audio/voices/public-07-oui.wav"))),
+			action(line(preload("res://audio/voices/public-06-bravo.wav"))),
+		]),
+		# 1-05
+		"Ils partent": action(line(
+			preload("res://audio/voices/b-deg.wav"), {
+				0.00: Line.Pose.new("suspicious")
+			}
+		)), 
+		# 1-06
+		"Ils l'ignorent": action(line(
+			preload("res://audio/voices/b-deg.wav"), {
+				0.00: Line.Pose.new("enerve_02")
+			}
+		)),
+	}),
+	# 1-07
+	action(line(
+		preload("res://audio/voices/1-01-assezdevoir.wav"), {
+			0.00: Line.Pose.new("flex_03"),
+			1.00: Line.Pose.new("flex_02"),
+			1.18: Line.Pose.new("flex_03"),
+			2.25: Line.Pose.new("flex_01"),
+		}
+	)),
+	# 1-08
+	action(line(
+		preload("res://audio/voices/1-02-monecuyer.wav"), {
+			0.00: Line.Pose.new("flex_03"),
+			2.72: Line.Pose.new("flex_01"),
+		}
+	)),
+	# 1-09
+	choice({
+		"Jorge": armor_place_with_jorge,
+		"Nous rencontrons un manque de budget": armor_place_without_budget,
+		"Lumiere": armor_place_light_on_public,
+	}),
 ])
 
 #endregion
