@@ -9,8 +9,8 @@
 	- 2-A-6 le jumeau de jorge apparait – et lui prend l'arme
 		- "donne moi ton arme toi..."
 		- le jumeau part...
-- B: "Me voilà prêt à pourfendre le chevalier noir !"
-- J: "Vous avez si bon goût monseigneur!" (se moquant de lui)
-- B: "En route cheval, il est tant de partir, ton dos Jorge !"
-- Jorge se met à 4 pattes, et le héros monte sur son dos pour partir
-- La suite : [[3-A-affrontement]]
+- 2-A-7 B: "Me voilà prêt à pourfendre le chevalier noir !"
+- 2-A-8 J: "Vous avez si bon goût monseigneur!" (se moquant de lui)
+- 2-A-9 B: "En route cheval, il est tant de partir, ton dos Jorge !"
+- 2-A-10 Jorge se met à 4 pattes, et le héros monte sur son dos pour partir
+- La suite : [[3-affrontement]]

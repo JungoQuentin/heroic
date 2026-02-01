@@ -1,0 +1,20 @@
+#ggj
+- 3-1 Un mec arrive en courant pour apporter une missive, contenant le lieu de l'affrontement
+- 3-2 **CHOIX 1** :
+	- 3-3 Le haut de la falaise stylé
+	- 3-4 Dans la fontaine du village (+1 enervement)
+	- 3-5 Dans la bibliotheque (+1 enervement)
+		- si on a le temps de faire en mode silencieux
+- 3-6 Rideaux se ferment
+- 3-7 Rideaux s'ouvrent (dans le lieu choisis)
+- 3-8 Le chevalier noir apparait
+	- si on avait choisi "manque de budget"
+		- 3.5-A-1 Jorge est le chevalier noir
+		- 3.5-A-2 Il rate les premieres repliques...
+	- sinon, 
+		- 3.5-B-1 Jorge vient le dégager et prendre sa place
+- 3-9 Pétage de plomb de Jorge
+- 3-10 "Ton dos Jorge, Ton dos Jorge, je vais t'en donner du dos! J'en ai marre ! Je suis ton écuyer dans le théatre dans la vraie vie !"
+- 3-11 **QTE** moment de noir -> appuyer plein de fois sur espace, devient intense, juste 2 epees qui se rapproche, jusqu'au "chling" de fin (coup d'epee)
+- 3-12 Fondu au blanc - heroic/epic
+- Suite : [[4-la fin]]

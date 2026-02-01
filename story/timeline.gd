@@ -10,7 +10,10 @@ func action(_action: Action) -> StoryNodeAction:
 func line(_audio: Resource) -> Line:
 	return Line.new(_audio, {})
 
-var story = StoryNodeList.new([
+func list(_list: Array[StoryNode]) -> StoryNodeList:
+	return StoryNodeList.new(_list)
+
+var intro = list([
 	# INTRODUCTION
 	# Les rideaux sont fermés
 	# 0-01
@@ -36,11 +39,11 @@ var story = StoryNodeList.new([
 	action(Action.CurtainsClosing.new()),
 	# 0-11
 	action(line(preload("res://audio/voices/public-03-oh.wav"))),
-	# next
-	armor_place
 ])
 
-var armor_place = StoryNodeList.new([
+#region ARMOR PLACE
+
+var armor_place = list([
 	action(Action.SceneChange.new("")),
 	action(Action.CurtainsOpening.new()),
 	# 1-01 -> TODO Il arrive, il y a pleins de gens sur scene (des paysans)
@@ -58,19 +61,92 @@ var armor_place = StoryNodeList.new([
 	# 1-09
 	choice({
 		"Jorge": armor_place_with_jorge,
-		"Nous rencontrons un manque de budget": null,
-		"Lumiere": null,
+		"Nous rencontrons un manque de budget": armor_place_without_budget,
+		"Lumiere": armor_place_light_on_public,
 	}),
 ])
 
-var armor_place_with_jorge = StoryNodeList.new([
+var sword_vs_brosse: Dictionary[String, StoryNode] = {
+	"Epee": list([]),
+	"Brosse": list([]),
+}
+
+var armor_place_with_jorge = list([
 	# 2-A-1 TODO Jorge arrive
 	# 2-A-2
 	action(line(preload("res://audio/voices/2a-01-j-monseigneurpermettezmoi.wav"))),
 	# 2-A-3
+	choice(sword_vs_brosse.merged({
+		"Le jumeau de Jorge": list([]),
+	})),
+	# 2-A-7
+	action(line(preload("res://audio/voices/2a-02-mevoilapret.wav"))),
+	# 2-A-8 
+	action(line(preload("res://audio/voices/2a-03-j-sibongout.wav"))),
+	# 2-A-9 
+	action(line(preload("res://audio/voices/2a-04-enroutecheval.wav"))),
+	# 2-A-10 TODO - Jorge se met à 4 pattes, et le héros monte sur son dos pour partir
+])
+
+var armor_place_without_budget = list([
+	# TODO garder l'info *-> en fait Jorge jouerai le méchant -> on le reconnaitra*
+	# 2-B-1
+	action(line(preload("res://audio/voices/voixoff-01-nomonture.wav"))),
+	# 2-B-2
+	action(line(preload("res://audio/voices/b-tousse.wav"))),
+	# 2-B-3 TODO B est énervé de cette situation
+	# 2-A-3
+	choice(sword_vs_brosse),
+	# 2-B-4 TODO Et au lieu de monter sur son dos, juste il part
+])
+
+var armor_place_light_on_public = list([
+	# 2-C-1 TODO moment de silence
+	# 2-C-2
+	action(line(preload("res://audio/voices/b-tousse.wav"))),
+	# 2-C-3 TODO travalto confused -> est confused, puis par du public
+	# 2-C-4 B:"hem hem", prend son épée et part
+])
+
+#endregion
+
+var affrontement = list([
+	# 3-1 TODO Un mec arrive en courant pour apporter une missive, contenant le lieu de l'affrontement
+	# 3-2 **CHOIX 1** :
 	choice({
-		"Epee": null,
-		"Brosse": null,
-		"Le jumeau de Jorge": null
-	})
+		"Bord d'une falaise": null,
+		"Dans la fontaine du village": null,
+		"Bibliotheque": null,
+	}),
+	# 3-6
+	action(Action.CurtainsClosing.new()),
+	action(Action.SceneChange.new("TODO")),
+	# 3-7
+	action(Action.CurtainsOpening.new()),
+	# 3-8 TODO Le chevalier noir apparait
+	#- si on avait choisi "manque de budget"
+		#- 3.5-A-1 Jorge est le chevalier noir
+		#- 3.5-A-2 Il rate les premieres repliques...
+	#- sinon, 
+		#- 3.5-B-1 Jorge vient le dégager et prendre sa place
+	# 3-9 TODO Pétage de plomb de Jorge
+	# 3-10
+	action(line(preload("res://audio/voices/3a-01-j-tondosjorge.wav"))),
+	# 3-11 TODO **QTE** moment de noir -> appuyer plein de fois sur espace, devient intense, juste 2 epees qui se rapproche, jusqu'au "chling" de fin (coup d'epee)
+	# 3-12 TODO Fondu au blanc - heroic/epic
+])
+
+var the_end = list([
+	action(line(preload("res://audio/voices/4a-01-barthotriomphe.wav"))),
+	action(line(preload("res://audio/voices/voixoff-4a-fin.wav"))),
+	# TODO aplause
+	# fin
+])
+
+
+var story = list([
+	intro,
+	armor_place,
+	affrontement,
+	the_end,
 ])
