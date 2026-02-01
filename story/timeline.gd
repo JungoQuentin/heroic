@@ -17,9 +17,10 @@ func list(_list: Array[StoryNode]) -> StoryNodeList:
 	return StoryNodeList.new(_list)
 
 var intro = list([
+	action(Action.SceneChange.new("intro")),
 	# TODO(bonus) -> du bruit de foule, puis le silence
 	#action(Action.Music.new(MIntro)),
-	#action(Action.Wait.new(4.)),
+	action(Action.Wait.new(2.)),
 	# 0-01
 	action(line(
 		'b',
@@ -100,7 +101,7 @@ var armor_place_with_jorge = list([
 	action(line(
 		'j',
 		preload("res://audio/voices/2a-01-j-monseigneurpermettezmoi.wav"), {
-			0.0: Line.Pose.new("blaze")
+			0.0: Line.Pose.new("blaze_01")
 		}
 	)),
 	# 2-A-3
@@ -137,7 +138,7 @@ var armor_place_light_on_public = list([
 ])
 
 var armor_place = list([
-	action(Action.SceneChange.new("")),
+	action(Action.SceneChange.new("armurerie")),
 	action(Action.CurtainsOpening.new()),
 	# 1-01 -> TODO Il arrive, il y a pleins de gens sur scene (des paysans)
 	# 1-02 -> TODO Il regarde le public, comme s'il s'attendait à ce que le public l'aclame
@@ -191,37 +192,60 @@ var armor_place = list([
 
 #endregion
 
+var triomphe = line(
+	'b', 
+	preload("res://audio/voices/4a-01-barthotriomphe.wav"),
+	{
+		0.00: Line.Pose.new("flex_02"), 
+		2.28: Line.Pose.new("flex_03"), 
+		3.03: Line.Pose.new("flex_01"),
+		5.00: Line.Pose.new("flex_03"),
+		9.49: Line.Pose.new("enerve_02"),
+	}
+)
+
 var affrontement = list([
-	# 3-1 TODO Un mec arrive en courant pour apporter une missive, contenant le lieu de l'affrontement
-	# 3-2 **CHOIX 1** :
+	## 3-1 TODO Un mec arrive en courant pour apporter une missive, contenant le lieu de l'affrontement
+	## 3-2 **CHOIX 1** :
 	choice({
-		"Bord d'une falaise": null,
-		"Dans la fontaine du village": null,
-		"Bibliotheque": null,
+		"Bord d'une falaise": list([]),
+		"Dans la fontaine du village": list([]),
+		"Bibliotheque": list([]),
 	}),
 	# 3-6
 	action(Action.CurtainsClosing.new()),
-	action(Action.SceneChange.new("TODO")),
+	action(Action.SceneChange.new("fontaine")),
 	# 3-7
 	action(Action.CurtainsOpening.new()),
-	# 3-8 TODO Le chevalier noir apparait
-	#- si on avait choisi "manque de budget"
-		#- 3.5-A-1 Jorge est le chevalier noir
-		#- 3.5-A-2 Il rate les premieres repliques...
-	#- sinon, 
-		#- 3.5-B-1 Jorge vient le dégager et prendre sa place
-	# 3-9 TODO Pétage de plomb de Jorge
+	action(line(
+		'b', 
+		preload("res://audio/voices/b-tousse.wav"), {
+			0.: Line.Pose.new("suspicious"),
+		}
+	)),
+	# 3-9 Pétage de plomb de Jorge
 	# 3-10
 	action(line('j', preload("res://audio/voices/3a-01-j-tondosjorge.wav"))),
-	# 3-11 TODO **QTE** moment de noir -> appuyer plein de fois sur espace, devient intense, juste 2 epees qui se rapproche, jusqu'au "chling" de fin (coup d'epee)
-	# 3-12 TODO Fondu au blanc - heroic/epic
-])
-
-var the_end = list([
-	action(line('b', preload("res://audio/voices/4a-01-barthotriomphe.wav"))),
-	action(line('o', preload("res://audio/voices/voixoff-4a-fin.wav"))),
-	# TODO aplause
-	# fin
+	# 3-11 TODO devient intense, juste 2 epees qui se rapproche, jusqu'au "chling" de fin (coup d'epee)
+	action(Action.TurnOffLight.new()),
+	action(Action.Wait.new(2.)),
+	choice({
+		"Bartholome est vaincueur": list([
+			action(Action.JorgeDied.new()),
+			action(Action.TurnOnLight.new()),
+			action(triomphe),
+			action(Action.CurtainsClosing.new()),
+		]),
+		"Bartholome est le vaincueur": list([
+			action(Action.JorgeDied.new()),
+			action(Action.TurnOnLight.new()),
+			action(triomphe),
+			action(Action.CurtainsClosing.new()),
+		]),
+		"Bartholome victorieux": action(line('o', preload("res://audio/voices/voixoff-4a-fin.wav"))),
+	}),
+	action(Action.Wait.new(3.)),
+	# TODO Applause ! Et fin !
 ])
 
 
@@ -229,5 +253,4 @@ var story = list([
 	intro,
 	armor_place,
 	affrontement,
-	the_end,
 ])

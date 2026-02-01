@@ -4,10 +4,16 @@ class CurtainsOpening extends Action:pass
 
 class CurtainsClosing extends Action:pass
 
+class TurnOffLight extends Action:pass
+
+class TurnOnLight extends Action:pass
+
+class JorgeDied extends Action:pass
+
 class SceneChange extends Action:
-	var scene
-	func _init(_scene):
-		scene = _scene
+	var scene_name: String
+	func _init(_scene: String):
+		scene_name = _scene
 
 class Wait extends Action:
 	var time: float
