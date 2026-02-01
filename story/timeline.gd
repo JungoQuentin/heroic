@@ -1,5 +1,8 @@
 class_name Timeline
 
+const MIntro = preload("res://audio/music/intro-v1.mp3")
+const MBoss = preload("res://audio/music/boss-v1.mp3")
+const MShop = preload("res://audio/music/shop-v1.mp3")
 
 func choice(_choices: Dictionary[String, StoryNode]) -> StoryNodeChoice:
 	return StoryNodeChoice.new(_choices)
@@ -15,10 +18,12 @@ func list(_list: Array[StoryNode]) -> StoryNodeList:
 
 var intro = list([
 	# TODO(bonus) -> du bruit de foule, puis le silence
+	action(Action.Music.new(MIntro)),
+	action(Action.Wait.new(4.)),
 	# 0-01
 	action(line(
-		preload("res://audio/voices/0-01-ofatalite.wav"), 
-		# Pas de poses -> derriere le rideau !
+		preload("res://audio/voices/0-01-ofatalite.wav"),
+		{0.00: Line.Pose.new("flex_03")} 
 	)),
 	# 0-02
 	choice({
@@ -30,45 +35,51 @@ var intro = list([
 	# 0-04
 	action(line(
 		preload("res://audio/voices/0-02-levillabominable.wav"), {
-			0.00: Line.Pose.new("flex_03.png"),
-			1.08: Line.Pose.new("flex_01.png"),
-			3.30: Line.Pose.new("flex_02.png"),
+			0.00: Line.Pose.new("flex_03"),
+			1.08: Line.Pose.new("flex_01"),
+			3.30: Line.Pose.new("flex_02"),
 		}
 	)),
 	# 0-05
 	action(line(
 		preload("res://audio/voices/0-03-adresseparole.wav"), {
-			0.00: Line.Pose.new("flex_03.png"),
-			1.01: Line.Pose.new("flex_02.png"),
+			0.00: Line.Pose.new("flex_03"),
+			1.01: Line.Pose.new("flex_02"),
 		}
 	)),
-	# TODO mettre un cri ? "cri.png"
+	# TODO mettre un cri ? "cri"
 	# 0-06
 	action(line(preload("res://audio/voices/public-03-oh.wav"))),
 	# 0-07
 	action(line(
 		preload("res://audio/voices/0-04-monroleproteger.wav"), {
-			0.00: Line.Pose.new("flex_03.png"),
-			4.44: Line.Pose.new("flex_01.png"),
+			0.00: Line.Pose.new("flex_03"),
+			4.44: Line.Pose.new("flex_01"),
 		}
 	)),
 	# 0-08
 	action(line(
 		preload("res://audio/voices/0-05-odieuxdonnezmoirage.wav"), {
-			0.00: Line.Pose.new("flex_03.png"),
-			3.40: Line.Pose.new("enerve_01.png"),
+			0.00: Line.Pose.new("flex_03"),
+			3.40: Line.Pose.new("enerve_01"),
 		}
 	)),
+	action(Action.Wait.new(1.)),
 	# 0-09
 	action(line(
 		preload("res://audio/voices/0-06-allonsy.wav"), { 
-			0: Line.Pose.new("flex_03.png") 
+			0: Line.Pose.new("flex_03") 
 		}
 	)),
 	# 0-10
 	action(Action.CurtainsClosing.new()),
 	# 0-11
 	action(line(preload("res://audio/voices/public-03-oh.wav"))),
+	
+	action(Action.Music.new(MIntro, Action.MusicAction.STOP)),
+	
+	# TODO applause
+	action(Action.Wait.new(4.)),
 ])
 
 #region ARMOR PLACE

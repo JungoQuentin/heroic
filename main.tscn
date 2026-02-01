@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dl42sr527mgru" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://cmysn2udtxgr7" path="res://canvas_layer.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://r7oqvcqkwqu6" path="res://scenes/world.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://c5m7oobcyiyqx" path="res://assets/3D/Personnages/Bartholome/cri.tscn" id="4_1bvp3"]
 
 [node name="Main" type="Node3D" unique_id=685122384]
 script = ExtResource("1_0xm2m")
@@ -35,6 +36,16 @@ text = "Choix C
 
 [node name="DialogAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=557127955]
 
+[node name="MusicAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=728339697]
+
 [node name="World" parent="." unique_id=1283472454 instance=ExtResource("3_h2yge")]
 
 [node name="Characters" type="Node3D" parent="." unique_id=550511979]
+
+[node name="StartJ" parent="Characters" unique_id=237000063 instance=ExtResource("4_1bvp3")]
+transform = Transform3D(0.09202305, 0, -0.99575704, 0, 1, 0, 0.99575704, 0, 0.09202305, 4.2, 2, 0)
+visible = false
+
+[node name="B" type="Node3D" parent="Characters" unique_id=23923444]
+
+[node name="J" type="Node3D" parent="Characters" unique_id=340315510]
