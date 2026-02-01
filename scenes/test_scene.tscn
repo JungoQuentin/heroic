@@ -201,6 +201,7 @@ skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("ShaderMaterial_gthg3")
 
 [node name="Stage_Intro" parent="." unique_id=1741336231 instance=ExtResource("13_u0xbq")]
+visible = false
 
 [node name="Stage_Fontaine" parent="." unique_id=166642736 instance=ExtResource("14_u0xbq")]
 visible = false

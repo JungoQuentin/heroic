@@ -7,6 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://i57fphpdo20k" path="res://assets/3D/decors/buisson_02.tscn" id="5_xieaj"]
 [ext_resource type="PackedScene" uid="uid://u7j6t1hpac6x" path="res://assets/3D/decors/lune.tscn" id="6_versb"]
 [ext_resource type="PackedScene" uid="uid://drx7vgtdldmt3" path="res://assets/3D/decors/etoile.tscn" id="7_4iq36"]
+[ext_resource type="Texture2D" uid="uid://knvodw7m45f0" path="res://assets/2D/decors/intro_bg.png" id="8_ag78r"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_jb5nt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_isayd"]
+albedo_texture = ExtResource("8_ag78r")
 
 [node name="Stage_Intro" type="Node3D" unique_id=1741336231]
 
@@ -19,22 +25,22 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.11
 transform = Transform3D(-7.430936e-08, 0, 1.7, 0, 1.7, 0, -1.7, 0, -7.430936e-08, 10.206804, 4.7683716e-07, 12.231436)
 
 [node name="arbre_02" parent="Decor" unique_id=1650366275 instance=ExtResource("3_jb5nt")]
-transform = Transform3D(-7.430936e-08, 0, 1.7, 0, 1.7, 0, -1.7, 0, -7.430936e-08, 11.198375, 0, -12.178138)
+transform = Transform3D(-7.430936e-08, 0, 1.7, 0, 1.7, 0, -1.7, 0, -7.430936e-08, 9.703704, 0, -11.260085)
 
 [node name="Node3D" parent="Decor" unique_id=1492020615 instance=ExtResource("4_isayd")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.9752407, 9.536743e-07, -6.7598934)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.3872237, 9.536743e-07, -4.708835)
 
 [node name="Node3D2" parent="Decor" unique_id=745176843 instance=ExtResource("5_xieaj")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.1843767, -9.536743e-07, 5.993074)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8.110784, -2.861023e-06, 2.8048873)
 
 [node name="Node3D3" parent="Decor" unique_id=392465645 instance=ExtResource("6_versb")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.7066765, 8.55029, 0.293023)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.7066765, 9.984344, 4.734356)
 
 [node name="Node3D4" parent="Decor" unique_id=1979294374 instance=ExtResource("7_4iq36")]
-transform = Transform3D(-3.628045e-08, 0, 0.83, 0, 0.83, 0, -0.83, 0, -3.628045e-08, 11.435393, 8.9320965, 6.1117644)
+transform = Transform3D(-3.628045e-08, 0, 0.83, 0, 0.83, 0, -0.83, 0, -3.628045e-08, 11.435392, 7.175643, 8.1051235)
 
 [node name="Node3D5" parent="Decor" unique_id=670541901 instance=ExtResource("7_4iq36")]
-transform = Transform3D(-2.7975288e-08, 0, 0.64, 0, 0.64, 0, -0.64, 0, -2.7975288e-08, 11.435393, 10.332741, -3.7552965)
+transform = Transform3D(-2.7975288e-08, 0, 0.64, 0, 0.64, 0, -0.64, 0, -2.7975288e-08, 11.435393, 10.751646, -7.4157386)
 
 [node name="Scene_Lights" type="Node3D" parent="." unique_id=1121446729]
 
@@ -47,16 +53,31 @@ spot_angle = 57.67488
 
 [node name="SpotLight" type="SpotLight3D" parent="Scene_Lights" unique_id=2054790]
 transform = Transform3D(-0.21952274, 4.2645155e-08, -0.9756074, 0.9756074, 9.595644e-09, -0.21952274, 0, -1, -4.371139e-08, 0.62891436, 0.7172246, 0)
+light_energy = 0.146
+shadow_enabled = true
+shadow_bias = 2.0
+shadow_normal_bias = 2.0
 spot_range = 6.216306
 spot_attenuation = 0.0
 spot_angle = 73.125
 
+[node name="SpotLight2" type="SpotLight3D" parent="Scene_Lights" unique_id=1444521823]
+transform = Transform3D(-0.041948885, 0.0631041, -0.99712497, 0.99911624, 1.837306e-09, -0.04203266, -0.0026524314, -0.99800694, -0.06304833, 0.62891436, 7.7278876, 0)
+light_energy = 25.0
+shadow_enabled = true
+shadow_bias = 2.0
+shadow_normal_bias = 2.0
+spot_range = 13.279
+spot_attenuation = 1.01
+spot_angle = 11.62
+
 [node name="SpotLight3D2" type="SpotLight3D" parent="Scene_Lights" unique_id=1113365477]
 transform = Transform3D(0.8726052, 0.41185123, -0.2625618, -0.094844356, 0.67021465, 0.73608214, 0.47912905, -0.61740667, 0.6238946, 4.095956, 11.687504, 13.060104)
-visible = false
 light_color = Color(0.8039671, 0.9804861, 0.9180601, 1)
 light_energy = 32.0
 shadow_enabled = true
+shadow_bias = 2.0
+shadow_normal_bias = 2.0
 distance_fade_enabled = true
 spot_range = 22.743
 spot_attenuation = 1.66
@@ -67,7 +88,7 @@ transform = Transform3D(1.7352882e-08, 0.917824, 0.39698777, 4.0119357e-08, -0.3
 light_color = Color(0.8039671, 0.9804861, 0.9180601, 1)
 light_energy = 32.0
 shadow_enabled = true
-shadow_bias = 3.0
+shadow_bias = 1.675
 shadow_normal_bias = 2.0
 distance_fade_enabled = true
 spot_range = 22.743
@@ -76,11 +97,17 @@ spot_angle = 18.536585
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="Scene_Lights" unique_id=147130842]
 transform = Transform3D(1.3113416e-07, 1, -4.371139e-08, 3.821371e-15, 4.371139e-08, 1, 1, -1.3113416e-07, 1.9106855e-15, 7.7515745, 11.679516, 0)
-light_energy = 32.0
+visible = false
+light_energy = 16.0
 shadow_enabled = true
-shadow_bias = 3.0
+shadow_bias = 2.0
 shadow_normal_bias = 2.0
 distance_fade_enabled = true
 spot_range = 17.709715
 spot_attenuation = 1.66
 spot_angle = 51.366898
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=18332314]
+transform = Transform3D(-1.3310118e-06, 0, -7.93, 0, 17.128, 0, 30.45, 0, -3.466313e-07, 11.563201, 5.3760166, 0)
+mesh = SubResource("QuadMesh_jb5nt")
+surface_material_override/0 = SubResource("StandardMaterial3D_isayd")
