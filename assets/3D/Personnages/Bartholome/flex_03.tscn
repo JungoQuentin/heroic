@@ -18,7 +18,7 @@ shader_parameter/world_scale = 20.0
 shader_parameter/rotation_deg = 0.0
 shader_parameter/rotation_pivot = Vector2(0, 0)
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_1yq67"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_qm47i"]
 _surfaces = [{
 "aabb": AABB(-2.0412118, -2.6866665, -0.05, 5.033333, 4.7666664, 0.1),
 "attribute_data": PackedByteArray("2lntPgAAgD/16fo+iAx3P9P16T4QGW4/Pl2fPiLDPT+Wccs+IsM9P9pZ7T5fBTM/2lntPl8FMz/oIfQ+5xEqP7hl3D666CI/KjEVPz/T1j5MJSY/bPzdPmQDMj98Fcw+Z7UzP/aZtj54Lzw/yXCvPrwXXj9TDog+vBdeP1MOiD7lb3I/P9NWPgAAgD/qgMg9AACAP+qAyD0AAIA/9iXlO/I3eT8/01YzU4kpPyblgD47qx0/xk5sPiAbED8goXo+v8nfPlMOiD7T9ek+xk5sPrhl3D7ngEg+KjGVPmIFMz7ZWW0+gTcPPkTBIj6vYBY+AdkAPmIFMz574b096oDIPeEhdD2fJWU94SF0PZ8lZT08waI8nyVlPQAAAAD3d/M9AAAAAPd38z2mAdk783dzPqwBWT0Gs6Q+zZHmPV8Fsz6mAVk8H6H6PqYB2Tvpogs/pgHZO+miCz944T09JFQfPx1pDj6qzzQ/RMEiPk1bYz+vAdk9eYRqP3vhvT3yd3M/e+G9PfJ3cz83+Rs+AACAP9pZ7T4AAIA/2lntPgAAgD/T9ek+EBluP5ANyD6YJWU/Pl2fPiLDPT/aWe0+XwUzP7hl3D666CI/KjEVPz/T1j5kAzI/fBXMPme1Mz/2mbY+Z7UzP/aZtj68F14/Uw6IPgAAgD/qgMg9AACAP+qAyD3yN3k/P9NWM9BDaD813Ks9U4kpPyblgD4gGxA/IKF6Phm3DD/poos+v8nfPlMOiD64Zdw+54BIPnvhvT4Tqk8+e+G9PhOqTz4qMZU+YgUzPkTBIj6vYBY+AdkAPmIFMz7hIXQ9nyVlPQAAAAD3d/M9AAAAAPd38z2sAVk9BrOkPs2R5j1fBbM+zZHmPV8Fsz6mAdk76aILPx1pDj6qzzQ/RMEiPk1bYz974b098ndzP9pZ7T4AAIA/2lntPgAAgD+QDcg+mCVlP1KJqT5edFE/Pl2fPiLDPT+4Zdw+uugiP3vhvT6Nvxs/AdkAP5kl5T4qMRU/P9PWPme1Mz/2mbY+Z7UzP/aZtj4AAIA/6oDIPdBDaD813Ks9v8nfPlMOiD574b0+E6pPPkTBIj6vYBY+AdkAPmIFMz4AAAAA93fzPc2R5j1fBbM+zZHmPV8Fsz4daQ4+qs80P1KJKT5P7EQ/UokpPk/sRD9EwSI+TVtjP9pZ7T4AAIA/Pl2fPiLDPT974b0+jb8bP2e1sz5hlhQ/Z7UzP/aZtj7QQ2g/NdyrPZO/ST8Tqk8+4b3wPhbMkj6/yd8+Uw6IPkTBIj6vYBY+RMEiPq9gFj4B2QA+YgUzPs2R5j1fBbM+UokpPk/sRD/aWe0+AACAP1KJqT5edFE/AdkAP5kl5T5ntTM/9pm2PpO/ST8Tqk8+4b3wPhbMkj5EwSI+r2AWPs2R5j1fBbM+zZHmPV8Fsz5SiSk+T+xEP1KJqT5edFE/AdkAP5kl5T6Tv0k/E6pPPlOJKT8m5YA+zZHmPV8Fsz5Siak+XnRRPz5dnz4iwz0/uGXcPnGvAj8B2QA/mSXlPlOJKT8m5YA+zZHmPV8Fsz4+XZ8+IsM9P2e1sz5hlhQ/Z7WzPmGWFD+4Zdw+ca8CP1OJKT8m5YA+4b3wPhbMkj7NkeY9XwWzPme1sz5hlhQ/Z7WzPmGWFD9TiSk/JuWAPhm3DD/poos+GbcMP+miiz7hvfA+FsySPme1sz5hlhQ/0/XpPhAZbj/16fo+iAx3P9pZ7T4AAIA/2lntPl8FMz+Wccs+IsM9Pz5dnz4iwz0/uGXcPrroIj/oIfQ+5xEqP9pZ7T5fBTM/ZAMyP3wVzD5MJSY/bPzdPioxFT8/09Y+vBdeP1MOiD54Lzw/yXCvPme1Mz/2mbY+AACAP+qAyD3lb3I/P9NWPrwXXj9TDog+8jd5Pz/TVjMAAIA/9iXlOwAAgD/qgMg9IBsQPyChej47qx0/xk5sPlOJKT8m5YA+uGXcPueASD7T9ek+xk5sPr/J3z5TDog+RMEiPq9gFj7ZWW0+gTcPPioxlT5iBTM+4SF0PZ8lZT174b096oDIPQHZAD5iBTM+AAAAAPd38z08waI8nyVlPeEhdD2fJWU9rAFZPQazpD6mAdk783dzPgAAAAD3d/M9pgHZO+miCz+mAVk8H6H6Ps2R5j1fBbM+HWkOPqrPND944T09JFQfP6YB2Tvpogs/e+G9PfJ3cz+vAdk9eYRqP0TBIj5NW2M/2lntPgAAgD83+Rs+AACAP3vhvT3yd3M/kA3IPpglZT/T9ek+EBluP9pZ7T4AAIA/uGXcPrroIj/aWe0+XwUzPz5dnz4iwz0/Z7UzP/aZtj5kAzI/fBXMPioxFT8/09Y+AACAP+qAyD28F14/Uw6IPme1Mz/2mbY+0ENoPzXcqz3yN3k/P9NWMwAAgD/qgMg9GbcMP+miiz4gGxA/IKF6PlOJKT8m5YA+e+G9PhOqTz64Zdw+54BIPr/J3z5TDog+RMEiPq9gFj4qMZU+YgUzPnvhvT4Tqk8+AAAAAPd38z3hIXQ9nyVlPQHZAD5iBTM+zZHmPV8Fsz6sAVk9BrOkPgAAAAD3d/M9HWkOPqrPND+mAdk76aILP82R5j1fBbM+2lntPgAAgD974b098ndzP0TBIj5NW2M/UompPl50UT+QDcg+mCVlP9pZ7T4AAIA/e+G9Po2/Gz+4Zdw+uugiPz5dnz4iwz0/Z7UzP/aZtj4qMRU/P9PWPgHZAD+ZJeU+0ENoPzXcqz0AAIA/6oDIPWe1Mz/2mbY+RMEiPq9gFj574b0+E6pPPr/J3z5TDog+zZHmPV8Fsz4AAAAA93fzPQHZAD5iBTM+UokpPk/sRD8daQ4+qs80P82R5j1fBbM+2lntPgAAgD9EwSI+TVtjP1KJKT5P7EQ/Z7WzPmGWFD974b0+jb8bPz5dnz4iwz0/k79JPxOqTz7QQ2g/NdyrPWe1Mz/2mbY+RMEiPq9gFj6/yd8+Uw6IPuG98D4WzJI+zZHmPV8Fsz4B2QA+YgUzPkTBIj6vYBY+UompPl50UT/aWe0+AACAP1KJKT5P7EQ/k79JPxOqTz5ntTM/9pm2PgHZAD+ZJeU+zZHmPV8Fsz5EwSI+r2AWPuG98D4WzJI+UompPl50UT9SiSk+T+xEP82R5j1fBbM+U4kpPyblgD6Tv0k/E6pPPgHZAD+ZJeU+Pl2fPiLDPT9Siak+XnRRP82R5j1fBbM+U4kpPyblgD4B2QA/mSXlPrhl3D5xrwI/Z7WzPmGWFD8+XZ8+IsM9P82R5j1fBbM+U4kpPyblgD64Zdw+ca8CP2e1sz5hlhQ/Z7WzPmGWFD/NkeY9XwWzPuG98D4WzJI+GbcMP+miiz5TiSk/JuWAPme1sz5hlhQ/Z7WzPmGWFD/hvfA+FsySPhm3DD/poos+"),
@@ -42,7 +42,8 @@ _surfaces = [{
 [node name="Node3D" type="Node3D" unique_id=237000063]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=247718696]
-mesh = SubResource("ArrayMesh_1yq67")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6875384, 0)
+mesh = SubResource("ArrayMesh_qm47i")
 script = ExtResource("4_odnsb")
 source_collision_poly = NodePath("../CollisionPolygon2D")
 pixels_per_unit = 300.0
@@ -55,5 +56,6 @@ polygon = PackedVector2Array(-19.999998, 699.99994, -489.99994, 699.99994, -579.
 one_way_collision_margin = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=362565842]
+visible = false
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_qm47i")
