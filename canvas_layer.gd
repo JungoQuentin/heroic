@@ -11,8 +11,9 @@ func _ready() -> void:
 
 func display_choices(choices: Dictionary[String, StoryNode]) -> StoryNode:
 	$ChoicesContainer.show()
-	for button in $ChoicesContainer.get_children():
+	for button: Button in $ChoicesContainer.get_children():
 		button.hide()
+		disconnect_all(button.pressed)
 	var i = 0
 	for choice in choices:
 		var button = $ChoicesContainer.get_child(i)
@@ -28,3 +29,7 @@ func display_choices(choices: Dictionary[String, StoryNode]) -> StoryNode:
 	await _choices_made
 	assert(_choice != null, "should have a choice")
 	return _choice
+
+func disconnect_all(sig:Signal):
+	for dict in sig.get_connections():
+		sig.disconnect(dict.callable)
