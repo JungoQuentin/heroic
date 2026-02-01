@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://hkwqnoxkdvn5" path="res://textures/wood/6453600.jpg" id="12_gthg3"]
 [ext_resource type="Texture2D" uid="uid://ba1nw4insj3ab" path="res://assets/2D/Publique/theatre_public_blocking.png" id="13_ntc4i"]
 [ext_resource type="PackedScene" uid="uid://dyof51lxc72by" path="res://assets/2D/test/test.tscn" id="13_u0xbq"]
+[ext_resource type="PackedScene" uid="uid://c5m7oobcyiyqx" path="res://assets/3D/Personnages/Bartholome/cri.tscn" id="14_u0xbq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gthg3"]
 sky_top_color = Color(0.40349752, 0.23201117, 0.09611865, 1)
@@ -252,3 +253,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_gthg3")
 
 [node name="Node3D" parent="." unique_id=237000063 instance=ExtResource("13_u0xbq")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.3992434, 2.4484649, -3.4021535)
+visible = false
+
+[node name="Node3D2" parent="." unique_id=2130307373 instance=ExtResource("14_u0xbq")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.4431229, 2.1943867, -2.5423207)

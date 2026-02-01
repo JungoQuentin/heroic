@@ -1,19 +1,19 @@
-[gd_scene format=4 uid="uid://dyof51lxc72by"]
+[gd_scene format=4 uid="uid://b6jxjdb47cmuw"]
 
-[ext_resource type="Shader" uid="uid://38qgcitxmrt3" path="res://shaders/cardboard_side.gdshader" id="2_2qfx8"]
-[ext_resource type="Script" uid="uid://ddo6co5gmjo3g" path="res://textures/cardboard/cardboard.gd" id="2_j0uwf"]
-[ext_resource type="Texture2D" uid="uid://cc12ix4hvhx88" path="res://textures/cardboard/cardboard.webp" id="3_528pn"]
-[ext_resource type="Texture2D" uid="uid://bvw3ible5gkvo" path="res://assets/2D/Bartholome/suspicious.jpg" id="5_nfxag"]
+[ext_resource type="Texture2D" uid="uid://bvw3ible5gkvo" path="res://assets/2D/Bartholome/suspicious.jpg" id="1_7jlc0"]
+[ext_resource type="Shader" uid="uid://38qgcitxmrt3" path="res://shaders/cardboard_side.gdshader" id="2_eygdk"]
+[ext_resource type="Texture2D" uid="uid://cc12ix4hvhx88" path="res://textures/cardboard/cardboard.webp" id="3_xtq64"]
+[ext_resource type="Script" uid="uid://ddo6co5gmjo3g" path="res://textures/cardboard/cardboard.gd" id="4_q483g"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tlktw"]
-albedo_texture = ExtResource("5_nfxag")
+albedo_texture = ExtResource("1_7jlc0")
 uv1_scale = Vector3(0.249, 0.65, 1)
 uv1_offset = Vector3(0.317, 0.17, 0)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uq8tg"]
 render_priority = 0
-shader = ExtResource("2_2qfx8")
-shader_parameter/albedo_tex = ExtResource("3_528pn")
+shader = ExtResource("2_eygdk")
+shader_parameter/albedo_tex = ExtResource("3_xtq64")
 shader_parameter/world_scale = 20.0
 shader_parameter/rotation_deg = 0.0
 shader_parameter/rotation_pivot = Vector2(0, 0)
@@ -43,7 +43,7 @@ _surfaces = [{
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=247718696]
 mesh = SubResource("ArrayMesh_1yq67")
-script = ExtResource("2_j0uwf")
+script = ExtResource("4_q483g")
 source_collision_poly = NodePath("../CollisionPolygon2D")
 pixels_per_unit = 300.0
 face_material = SubResource("StandardMaterial3D_tlktw")
@@ -56,4 +56,4 @@ one_way_collision_margin = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=362565842]
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("5_nfxag")
+texture = ExtResource("1_7jlc0")
