@@ -5,6 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://3dxcmlflm276" path="res://assets/3D/decors/bouclier.tscn" id="3_2aqvl"]
 [ext_resource type="PackedScene" uid="uid://dg48b0urtp3o" path="res://assets/3D/decors/drap_objet.tscn" id="4_4hg6s"]
 [ext_resource type="PackedScene" uid="uid://dekvcdpk5h3gl" path="res://assets/3D/decors/rideau_carton.tscn" id="5_0ab0s"]
+[ext_resource type="Texture2D" uid="uid://ddkgos30wm5a" path="res://assets/2D/decors/armurerie_fond.png" id="6_xgkn1"]
+[ext_resource type="PackedScene" uid="uid://bvkvvfpuk7s2r" path="res://assets/3D/Personnages/paysan.tscn" id="7_2aqvl"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_2aqvl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4hg6s"]
+albedo_texture = ExtResource("6_xgkn1")
 
 [node name="Stage_Armurerie" type="Node3D" unique_id=733744228]
 
@@ -17,10 +24,10 @@ transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 4.68
 [node name="Decor" type="Node3D" parent="." unique_id=2027067308]
 
 [node name="barril" parent="Decor" unique_id=930630809 instance=ExtResource("2_xgkn1")]
-transform = Transform3D(-6.119594e-08, 0, -1.4, 0, 1.4, 0, 1.4, 0, -6.119594e-08, 8.59793, 2.8446512, 9.957816)
+transform = Transform3D(-6.119594e-08, 0, -1.4, 0, 1.4, 0, 1.4, 0, -6.119594e-08, 8.59793, 2.8446512, 11.227954)
 
 [node name="blason" parent="Decor" unique_id=2011971032 instance=ExtResource("3_2aqvl")]
-transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, 11.396741, 8.429317, 0)
+transform = Transform3D(-4.4148504e-08, 0, -1.01, 0, 1.01, 0, 1.01, 0, -4.4148504e-08, 6.1827374, 3.8366952, -9.921072)
 
 [node name="objet_drap" parent="Decor" unique_id=825517000 instance=ExtResource("4_4hg6s")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.7800245, 1.6067967, -8.218288)
@@ -119,15 +126,16 @@ spot_range = 17.709715
 spot_attenuation = 1.66
 spot_angle = 23.626987
 
-[node name="Spot_B" type="SpotLight3D" parent="Scene_Lights" unique_id=399754060]
-transform = Transform3D(0.38311887, 0.67059326, -0.63523585, 9.018209e-08, 0.6877087, 0.7259868, 0.923699, -0.2781393, 0.2634741, -2.8784142, 11.679516, 0)
-visible = false
-light_energy = 32.0
+[node name="Spot_paysan" type="SpotLight3D" parent="Scene_Lights" unique_id=399754060]
+transform = Transform3D(0.35244557, 0.7604977, -0.5453672, -0.19182308, 0.6290957, 0.75328773, 0.9159616, -0.16087891, 0.36760303, 1.2321115, 9.662341, -3.4637825)
+light_energy = 16.0
 shadow_enabled = true
+shadow_bias = 2.0
+shadow_normal_bias = 2.0
 distance_fade_enabled = true
 spot_range = 17.709715
 spot_attenuation = 1.66
-spot_angle = 12.927769
+spot_angle = 17.356867
 
 [node name="Spot_J" type="SpotLight3D" parent="Scene_Lights" unique_id=908418834]
 transform = Transform3D(-0.42261833, 0.6585002, -0.6227127, 0, 0.6870874, 0.7265746, 0.90630776, 0.30706373, -0.29037574, -2.8784142, 11.679516, 0)
@@ -138,3 +146,19 @@ distance_fade_enabled = true
 spot_range = 17.709715
 spot_attenuation = 1.66
 spot_angle = 12.927769
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=40198598]
+transform = Transform3D(-1.4026984e-06, 0, -8.357, 0, 18.05, 0, 32.09, 0, -3.6529607e-07, 11.563201, 4.1707726, 1.11726)
+mesh = SubResource("QuadMesh_2aqvl")
+surface_material_override/0 = SubResource("StandardMaterial3D_4hg6s")
+
+[node name="paysans" type="Node3D" parent="." unique_id=1494516917]
+
+[node name="Node3D" parent="paysans" unique_id=1662482499 instance=ExtResource("7_2aqvl")]
+transform = Transform3D(-0.3029051, 0, 1.0314425, 0, 1.075, 0, -1.0314425, 0, -0.3029051, 7.0557466, 0, -6.5090704)
+
+[node name="Node3D2" parent="paysans" unique_id=1056921504 instance=ExtResource("7_2aqvl")]
+transform = Transform3D(0.28177223, 0, -0.9594813, 0, 1, 0, 0.9594813, 0, 0.28177223, 9.24451, 0, -6.28895)
+
+[node name="Node3D3" parent="paysans" unique_id=1367149659 instance=ExtResource("7_2aqvl")]
+transform = Transform3D(0.28177226, 0, -0.95948136, 0, 1, 0, 0.95948136, 0, 0.28177226, 5.330615, 0, -7.422815)
