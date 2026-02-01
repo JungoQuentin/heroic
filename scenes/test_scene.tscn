@@ -93,9 +93,11 @@ fov = 46.7
 
 [node name="rideau_droite" parent="." unique_id=1497206293 instance=ExtResource("8_njel3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8008442, 0, 0)
+visible = false
 
 [node name="rideau_gauche" parent="." unique_id=1475470428 instance=ExtResource("9_vr1i5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8008442, 0, 0)
+visible = false
 
 [node name="Lights" type="Node3D" parent="." unique_id=1130469808]
 
@@ -256,4 +258,4 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.39
 visible = false
 
 [node name="Node3D2" parent="." unique_id=2130307373 instance=ExtResource("14_u0xbq")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.4431229, 2.1943867, -2.5423207)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.1131735, 2.1943862, -0.4156747)
