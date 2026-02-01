@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://bngfwr25xcu7u"]
+
+[ext_resource type="PackedScene" uid="uid://c5m7oobcyiyqx" path="res://assets/3D/Personnages/Bartholome/cri.tscn" id="1_yo8rq"]
+[ext_resource type="PackedScene" uid="uid://dfrh62g4m0f82" path="res://assets/3D/decors/barril.tscn" id="2_xgkn1"]
+[ext_resource type="PackedScene" uid="uid://3dxcmlflm276" path="res://assets/3D/decors/bouclier.tscn" id="3_2aqvl"]
+[ext_resource type="PackedScene" uid="uid://dg48b0urtp3o" path="res://assets/3D/decors/drap_objet.tscn" id="4_4hg6s"]
+[ext_resource type="PackedScene" uid="uid://dekvcdpk5h3gl" path="res://assets/3D/decors/rideau_carton.tscn" id="5_0ab0s"]
+
+[node name="Stage_Armurerie" type="Node3D" unique_id=733744228]
+
+[node name="B_Start" parent="." unique_id=237000063 instance=ExtResource("1_yo8rq")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.681994, 0, -1.8430493)
+
+[node name="J_Start" parent="." unique_id=190175319 instance=ExtResource("1_yo8rq")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 4.681994, 0, 5.6999555)
+
+[node name="Decor" type="Node3D" parent="." unique_id=2027067308]
+
+[node name="barril" parent="Decor" unique_id=930630809 instance=ExtResource("2_xgkn1")]
+transform = Transform3D(-6.119594e-08, 0, -1.4, 0, 1.4, 0, 1.4, 0, -6.119594e-08, 8.59793, 2.8446512, 9.957816)
+
+[node name="blason" parent="Decor" unique_id=2011971032 instance=ExtResource("3_2aqvl")]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, 11.396741, 8.429317, 0)
+
+[node name="objet_drap" parent="Decor" unique_id=825517000 instance=ExtResource("4_4hg6s")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.7800245, 1.6067967, -8.218288)
+
+[node name="rideau" parent="Decor" unique_id=323155948 instance=ExtResource("5_0ab0s")]
+transform = Transform3D(-8.589288e-08, 0, -1.965, 0, 1.965, 0, 1.965, 0, -8.589288e-08, 6.3398046, 5.2744746, -7.227791)
+
+[node name="Scene_Lights" type="Node3D" parent="." unique_id=1852893580]
+
+[node name="mainSpotLight" type="SpotLight3D" parent="Scene_Lights" unique_id=1390211734]
+transform = Transform3D(-0.21952274, 4.2645155e-08, -0.9756074, 0.9756074, 9.595644e-09, -0.21952274, 0, -1, -4.371139e-08, -0.12146592, 0.4278469, 0)
+light_color = Color(0.6117647, 0.7921569, 1, 1)
+light_energy = 2.0
+spot_range = 35.778385
+spot_attenuation = 0.7
+spot_angle = 74.398636
+
+[node name="SpotLight" type="SpotLight3D" parent="Scene_Lights" unique_id=754384327]
+transform = Transform3D(-0.21952274, 4.2645155e-08, -0.9756074, 0.9756074, 9.595644e-09, -0.21952274, 0, -1, -4.371139e-08, 0.62891436, 0.7172246, 0)
+visible = false
+spot_range = 6.216306
+spot_attenuation = 0.0
+spot_angle = 73.125
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Scene_Lights" unique_id=1946519669]
+transform = Transform3D(0.8726052, 0.41185123, -0.2625618, -0.094844356, 0.67021465, 0.73608214, 0.47912905, -0.61740667, 0.6238946, 4.095956, 11.687504, 13.060104)
+visible = false
+light_color = Color(0.8039671, 0.9804861, 0.9180601, 1)
+light_energy = 32.0
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 22.743
+spot_attenuation = 1.66
+spot_angle = 40.95
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Scene_Lights" unique_id=883071423]
+transform = Transform3D(-7.7060776e-09, 0.98433757, -0.17629448, 4.3026755e-08, 0.17629448, 0.98433757, 1, 2.8863173e-15, -4.3711385e-08, 4.525096, 19.587225, 0)
+visible = false
+light_color = Color(0.9999996, 0.94222444, 0.6132169, 1)
+light_energy = 32.0
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 22.743
+spot_attenuation = 1.66
+spot_angle = 37.708614
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="Scene_Lights" unique_id=749759398]
+transform = Transform3D(-7.7060776e-09, 0.9843375, -0.17629448, 4.3026755e-08, 0.17629448, 0.98433745, 1, 1.776357e-15, -4.371139e-08, 2.3361492, 17.941576, 0)
+visible = false
+light_color = Color(0.63529414, 0.7607843, 1, 1)
+light_energy = 60.0
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 22.743
+spot_angle = 29.69
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Scene_Lights" unique_id=1469974842]
+transform = Transform3D(1.2931717e-07, 0.9861441, -0.16589108, 2.1753984e-08, 0.16589108, 0.9861441, 1, -1.3113417e-07, 1.776357e-15, 2.7158742, 11.679516, -1.5916328)
+light_energy = 12.0
+shadow_enabled = true
+shadow_bias = 2.0
+shadow_normal_bias = 2.0
+distance_fade_enabled = true
+spot_range = 17.709715
+spot_attenuation = 1.15
+spot_angle = 19.00644
+
+[node name="SpotLight3D8" type="SpotLight3D" parent="Scene_Lights" unique_id=1685688764]
+transform = Transform3D(1.2931717e-07, 0.9861441, -0.16589108, 2.1753984e-08, 0.16589108, 0.9861441, 1, -1.3113416e-07, 3.5527137e-15, 2.7158742, 11.679516, 5.8483057)
+light_energy = 16.0
+shadow_enabled = true
+shadow_bias = 2.0
+shadow_normal_bias = 2.0
+distance_fade_enabled = true
+spot_range = 17.709715
+spot_attenuation = 1.15
+spot_angle = 16.928682
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="Scene_Lights" unique_id=428024957]
+transform = Transform3D(1.2931717e-07, 0.9861441, -0.16589108, 2.1753984e-08, 0.16589108, 0.9861441, 1, -1.3113417e-07, 1.776357e-15, 2.7158742, 11.679516, -5)
+visible = false
+light_energy = 32.0
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 17.709715
+spot_attenuation = 1.15
+spot_angle = 27.400572
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Scene_Lights" unique_id=1658004482]
+transform = Transform3D(9.520167e-08, 0.7259868, -0.6877087, 9.018209e-08, 0.6877087, 0.7259868, 1, -1.3113416e-07, 1.9106853e-15, -2.8784142, 11.679516, 0)
+visible = false
+light_energy = 32.0
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 17.709715
+spot_attenuation = 1.66
+spot_angle = 23.626987
+
+[node name="Spot_B" type="SpotLight3D" parent="Scene_Lights" unique_id=399754060]
+transform = Transform3D(0.38311887, 0.67059326, -0.63523585, 9.018209e-08, 0.6877087, 0.7259868, 0.923699, -0.2781393, 0.2634741, -2.8784142, 11.679516, 0)
+visible = false
+light_energy = 32.0
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 17.709715
+spot_attenuation = 1.66
+spot_angle = 12.927769
+
+[node name="Spot_J" type="SpotLight3D" parent="Scene_Lights" unique_id=908418834]
+transform = Transform3D(-0.42261833, 0.6585002, -0.6227127, 0, 0.6870874, 0.7265746, 0.90630776, 0.30706373, -0.29037574, -2.8784142, 11.679516, 0)
+visible = false
+light_energy = 32.0
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 17.709715
+spot_attenuation = 1.66
+spot_angle = 12.927769
