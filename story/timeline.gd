@@ -253,9 +253,9 @@ var affrontement = list([
 	# 3-10
 	action(line('j', preload("res://audio/voices/3a-01-j-tondosjorge.wav"))),
 	
-	action(Action.Sfx.new(preload("res://audio/sfx/sword_fight.mp3"))),
 	
 	action(Action.TurnOffLight.new()),
+	action(Action.Sfx.new(preload("res://audio/sfx/sword_fight.mp3"), 3.)),
 	action(Action.Wait.new(2.)),
 	action(Action.Music.new(MBoss, Action.MusicAction.STOP)),
 	choice({
@@ -274,7 +274,7 @@ var affrontement = list([
 		"Bartholome victorieux": action(line('o', preload("res://audio/voices/voixoff-4a-fin.wav"))),
 	}),
 	action(Action.Wait.new(3.)),
-	action(Action.Sfx.new(preload("res://audio/sfx/applaudissement.mp3"))),
+	action(Action.Sfx.new(preload("res://audio/sfx/applaudissement.mp3"), 15.)),
 ])
 
 
