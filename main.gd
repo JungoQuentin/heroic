@@ -15,9 +15,14 @@ var b: Dictionary[String, PackedScene] = {
 	"flex_03": preload("res://assets/3D/Personnages/Bartholome/flex_03.tscn"),
 	"suspicious": preload("res://assets/3D/Personnages/Bartholome/suspicious.tscn"),
 	"cri": preload("res://assets/3D/Personnages/Bartholome/cri.tscn"),
+	#"monture_01": preload("res://assets/3D/Personnages/Bartholome/monture_01.tscn"),
 }
 
 var j: Dictionary[String, PackedScene] = {
+	#"blaze_01": preload("res://assets/3D/Personnages/jorge/blaze_01.tscn"),
+	#"blaze_02": preload("res://assets/3D/Personnages/jorge/blaze_02.tscn"),
+	#"enerve_01": preload("res://assets/3D/Personnages/jorge/enerve_01.tscn"),
+	#"combat_01": preload("res://assets/3D/Personnages/jorge/combat_01.tscn"),
 }
 
 func _ready() -> void:
@@ -55,7 +60,7 @@ func execute_action(action: Action) -> void:
 	if action is Line:
 		dialog_stream_player.stream = action.audio
 		dialog_stream_player.play()
-		poses_loop(action.poses_times, Time.get_ticks_msec())
+		poses_loop(action.qui, action.poses_times, Time.get_ticks_msec())
 		await dialog_stream_player.finished
 	elif action is Action.CurtainsClosing:
 		await world.close_curtains()
@@ -72,6 +77,7 @@ func execute_action(action: Action) -> void:
 
 
 func poses_loop(
+	qui: String,
 	poses_times: Dictionary[float, Line.Pose], # TODO way to know the char ! for Jorge
 	started_since: int
 ) -> void:
@@ -80,16 +86,25 @@ func poses_loop(
 	var elapsed = Time.get_ticks_msec() - started_since
 	var first = poses_times.keys().min()
 	if first * 1000 < elapsed:
-		var pose: Line.Pose = poses_times[first]
-		b_container.get_children().map(func(c): c.hide())
-		var character: Node3D = b_container.get_node(pose.pose_name)
-		character.show()
-		character.rotation.y = -90.
-		character.position = Vector3(4.5, 2, 0)
-		# TODO changer sa position # if pose.position_x != -1:
-		poses_times.erase(first)
+		var container: Node3D = null
+		match qui:
+			'p': pass
+			'o': pass
+			'b': 
+				container = b_container
+			'j':
+				container = j_container
+		if container != null:
+			var pose: Line.Pose = poses_times[first]
+			container.get_children().map(func(c): c.hide())
+			var character: Node3D = container.get_node(pose.pose_name)
+			character.show()
+			character.rotation.y = -90.
+			character.position = Vector3(4.5, 0, 0)
+			# TODO changer sa position # if pose.position_x != -1:
+			poses_times.erase(first)
 	await get_tree().create_timer(0.1).timeout
-	poses_loop(poses_times, started_since)
+	poses_loop(qui, poses_times, started_since)
 
 
 #region music

@@ -10,8 +10,8 @@ func choice(_choices: Dictionary[String, StoryNode]) -> StoryNodeChoice:
 func action(_action: Action) -> StoryNodeAction:
 	return StoryNodeAction.new(_action)
 
-func line(_audio: Resource, _poses: Dictionary[float, Line.Pose] = {}) -> Line:
-	return Line.new(_audio, _poses)
+func line(_perso: String, _audio: Resource, _poses: Dictionary[float, Line.Pose] = {}) -> Line:
+	return Line.new(_perso, _audio, _poses)
 
 func list(_list: Array[StoryNode]) -> StoryNodeList:
 	return StoryNodeList.new(_list)
@@ -22,6 +22,7 @@ var intro = list([
 	#action(Action.Wait.new(4.)),
 	# 0-01
 	action(line(
+		'b',
 		preload("res://audio/voices/0-01-ofatalite.wav"),
 		{0.00: Line.Pose.new("flex_03")} 
 	)),
@@ -34,6 +35,7 @@ var intro = list([
 	# 0-03
 	# 0-04
 	action(line(
+		'b',
 		preload("res://audio/voices/0-02-levillabominable.wav"), {
 			0.00: Line.Pose.new("flex_03"),
 			1.08: Line.Pose.new("flex_01"),
@@ -42,6 +44,7 @@ var intro = list([
 	)),
 	# 0-05
 	action(line(
+		'b',
 		preload("res://audio/voices/0-03-adresseparole.wav"), {
 			0.00: Line.Pose.new("flex_03"),
 			1.01: Line.Pose.new("flex_02"),
@@ -49,9 +52,10 @@ var intro = list([
 	)),
 	# TODO mettre un cri ? "cri"
 	# 0-06
-	action(line(preload("res://audio/voices/public-03-oh.wav"))),
+	action(line('b', preload("res://audio/voices/public-03-oh.wav"))),
 	# 0-07
 	action(line(
+		'b',
 		preload("res://audio/voices/0-04-monroleproteger.wav"), {
 			0.00: Line.Pose.new("flex_03"),
 			4.44: Line.Pose.new("flex_01"),
@@ -59,6 +63,7 @@ var intro = list([
 	)),
 	# 0-08
 	action(line(
+		'b',
 		preload("res://audio/voices/0-05-odieuxdonnezmoirage.wav"), {
 			0.00: Line.Pose.new("flex_03"),
 			3.40: Line.Pose.new("enerve_01"),
@@ -67,6 +72,7 @@ var intro = list([
 	action(Action.Wait.new(1.)),
 	# 0-09
 	action(line(
+		'b',
 		preload("res://audio/voices/0-06-allonsy.wav"), { 
 			0: Line.Pose.new("flex_03") 
 		}
@@ -74,7 +80,7 @@ var intro = list([
 	# 0-10
 	action(Action.CurtainsClosing.new()),
 	# 0-11
-	action(line(preload("res://audio/voices/public-03-oh.wav"))),
+	action(line('p', preload("res://audio/voices/public-03-oh.wav"))),
 	
 	action(Action.Music.new(MIntro, Action.MusicAction.STOP)),
 	
@@ -91,26 +97,31 @@ var sword_vs_brosse: Dictionary[String, StoryNode] = {
 var armor_place_with_jorge = list([
 	# 2-A-1 TODO Jorge arrive
 	# 2-A-2
-	action(line(preload("res://audio/voices/2a-01-j-monseigneurpermettezmoi.wav"))),
+	action(line(
+		'j',
+		preload("res://audio/voices/2a-01-j-monseigneurpermettezmoi.wav"), {
+			0.0: Line.Pose.new("blaze")
+		}
+	)),
 	# 2-A-3
 	choice(sword_vs_brosse.merged({
 		"Le jumeau de Jorge": list([]),
 	})),
 	# 2-A-7
-	action(line(preload("res://audio/voices/2a-02-mevoilapret.wav"))),
+	action(line('b', preload("res://audio/voices/2a-02-mevoilapret.wav"))),
 	# 2-A-8 
-	action(line(preload("res://audio/voices/2a-03-j-sibongout.wav"))),
+	action(line('b', preload("res://audio/voices/2a-03-j-sibongout.wav"))),
 	# 2-A-9 
-	action(line(preload("res://audio/voices/2a-04-enroutecheval.wav"))),
+	action(line('b', preload("res://audio/voices/2a-04-enroutecheval.wav"))),
 	# 2-A-10 TODO - Jorge se met à 4 pattes, et le héros monte sur son dos pour partir
 ])
 
 var armor_place_without_budget = list([
 	# TODO garder l'info *-> en fait Jorge jouerai le méchant -> on le reconnaitra*
 	# 2-B-1
-	action(line(preload("res://audio/voices/voixoff-01-nomonture.wav"))),
+	action(line('o', preload("res://audio/voices/voixoff-01-nomonture.wav"))),
 	# 2-B-2
-	action(line(preload("res://audio/voices/b-tousse.wav"))),
+	action(line('b', preload("res://audio/voices/b-tousse.wav"))),
 	# 2-B-3 TODO B est énervé de cette situation
 	# 2-A-3
 	choice(sword_vs_brosse),
@@ -120,7 +131,7 @@ var armor_place_without_budget = list([
 var armor_place_light_on_public = list([
 	# 2-C-1 TODO moment de silence
 	# 2-C-2
-	action(line(preload("res://audio/voices/b-tousse.wav"))),
+	action(line('b', preload("res://audio/voices/b-tousse.wav"))),
 	# 2-C-3 TODO travalto confused -> est confused, puis par du public
 	# 2-C-4 B:"hem hem", prend son épée et part
 ])
@@ -133,18 +144,20 @@ var armor_place = list([
 	# 1-03
 	choice({
 		"Ils l'acclament": list([ # TODO paralel ? -> sinon bruitage special
-			action(line(preload("res://audio/voices/public-05-bravo.wav"))),
-			action(line(preload("res://audio/voices/public-07-oui.wav"))),
-			action(line(preload("res://audio/voices/public-06-bravo.wav"))),
+			action(line('p', preload("res://audio/voices/public-05-bravo.wav"))),
+			action(line('p', preload("res://audio/voices/public-07-oui.wav"))),
+			action(line('p', preload("res://audio/voices/public-06-bravo.wav"))),
 		]),
 		# 1-05
 		"Ils partent": action(line(
+			'b',
 			preload("res://audio/voices/b-deg.wav"), {
 				0.00: Line.Pose.new("suspicious")
 			}
 		)), 
 		# 1-06
 		"Ils l'ignorent": action(line(
+			'b',
 			preload("res://audio/voices/b-deg.wav"), {
 				0.00: Line.Pose.new("enerve_02")
 			}
@@ -152,6 +165,7 @@ var armor_place = list([
 	}),
 	# 1-07
 	action(line(
+		'b',
 		preload("res://audio/voices/1-01-assezdevoir.wav"), {
 			0.00: Line.Pose.new("flex_03"),
 			1.00: Line.Pose.new("flex_02"),
@@ -161,6 +175,7 @@ var armor_place = list([
 	)),
 	# 1-08
 	action(line(
+		'b',
 		preload("res://audio/voices/1-02-monecuyer.wav"), {
 			0.00: Line.Pose.new("flex_03"),
 			2.72: Line.Pose.new("flex_01"),
@@ -197,14 +212,14 @@ var affrontement = list([
 		#- 3.5-B-1 Jorge vient le dégager et prendre sa place
 	# 3-9 TODO Pétage de plomb de Jorge
 	# 3-10
-	action(line(preload("res://audio/voices/3a-01-j-tondosjorge.wav"))),
+	action(line('j', preload("res://audio/voices/3a-01-j-tondosjorge.wav"))),
 	# 3-11 TODO **QTE** moment de noir -> appuyer plein de fois sur espace, devient intense, juste 2 epees qui se rapproche, jusqu'au "chling" de fin (coup d'epee)
 	# 3-12 TODO Fondu au blanc - heroic/epic
 ])
 
 var the_end = list([
-	action(line(preload("res://audio/voices/4a-01-barthotriomphe.wav"))),
-	action(line(preload("res://audio/voices/voixoff-4a-fin.wav"))),
+	action(line('b', preload("res://audio/voices/4a-01-barthotriomphe.wav"))),
+	action(line('o', preload("res://audio/voices/voixoff-4a-fin.wav"))),
 	# TODO aplause
 	# fin
 ])
